@@ -133,6 +133,7 @@ body {
   &__top {
     padding-top: 15px;
     padding-bottom: 15px;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -166,8 +167,6 @@ body {
     &:active &__icon path{
       fill: $orange-dark;
     }
-
-
     &__icon {
       margin-right: 3px;
       width: 16.5px;
@@ -188,7 +187,6 @@ body {
         outline: 0;
         color: $orange-primary;
       }
-
     }
   }
   &__info {
@@ -220,6 +218,7 @@ body {
     }
   }
   &__middle {
+    width: 100%;
     padding-top: 33px;
     padding-bottom: 14.5px;
     display: flex;
@@ -231,6 +230,7 @@ body {
     height: 27px;
   }
   &__bottom {
+    width: 100%;
     padding-top: 14.5px;
     display: flex;
     align-items: center;
@@ -371,12 +371,14 @@ body {
   }
 
 .search {
+  width: 85%;
   &__form {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
   }
   &__label {
+    width: 70%;
     position: relative;
     display: flex;
     align-items: center;
@@ -425,9 +427,8 @@ body {
     } 
   }
   &__input {
-    padding: 17.5px 60px;
-    min-width: 761px;
     width: 100%;
+    padding: 17.5px 60px;
     background-color: $bgc-primary;
     border: 2px solid $bgc-primary;
     border-radius: 10px 0px 0px 10px;
@@ -467,7 +468,7 @@ body {
     }
   }
   &__select {
-    width: 300px;
+    width: 27.5%;
     position: relative;
     cursor: pointer;
     &:focus-visible &__header{
@@ -544,6 +545,7 @@ body {
 }
 
 .personal {
+  width: 10%;
   display: flex;
   justify-content: end;
   align-items: center;
