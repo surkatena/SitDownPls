@@ -1,5 +1,5 @@
-// @import "_variables.scss";
-// @import "_mixin.scss";
+@import "_variables.scss";
+@import "_mixin.scss";
 
 html {
 	box-sizing: border-box;
@@ -38,13 +38,13 @@ address{
 }
 
 body {
-  font-family: 'Open Sans', Arial, Verdana, sans-serif;
+  font-family: 'Open Sans', Verdana, Arial, sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 16px;
   color:  black;
 
-  background-color: white;
+  background-color: $white;
 }
 
 @font-face {
@@ -68,20 +68,20 @@ body {
 }
 
 @font-face {
-  font-family: "TTFirsNeue";
-  src: local("TTFirsNeue-Regular"),
-  url("../fonts/firs/TTFirsNeue-Regular.woff2") format("woff2"),
-  url("../fonts/firs/TTFirsNeue-Regular.woff") format("woff");
-  font-weight: 400;
+  font-family: "Open Sans";
+  src: local("Open Sans-SemiBold"),
+  url("../fonts/OpenSans-SemiBold.woff2") format("woff2"),
+  url("../fonts/OpenSans-SemiBold.woff") format("woff");
+  font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "TTFirsNeue";
-  src: local("TTFirsNeue-Bold"),
-  url("../fonts/firs/TTFirsNeue-Bold.woff2") format("woff2"),
-  url("../fonts/firs/TTFirsNeue-Bold.woff") format("woff");
+  font-family: "Playfair Display";
+  src: local("Playfair Display-Black"),
+  url("../fonts/PlayfairDisplay-Black.woff2") format("woff2"),
+  url("../fonts/PlayfairDisplay-Black.woff") format("woff");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -101,9 +101,10 @@ body {
 
 .container {
   margin: 0 auto;
-  padding: 0 315px;
+  padding: 0 $padding;
 
-  // max-width: $containerMaxWidth;
+  max-width: $containerMaxWidth;
+  // padding: 0 50px;
 }
 
 .btn {
@@ -126,5 +127,487 @@ body {
 .burger {
   display: none;
 }
+
+.header {
+  padding-bottom: 12px;
+  &__top {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    background-color: $bgc-primary;
+  }
+  &__contacts{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  &__phone{
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    &:focus-within{
+      background-color: $bgc-yellow;
+    }
+    &:hover &__number{
+      color: $orange-light;
+    }
+    &:active &__number{
+      color: $orange-dark;
+    }
+    &:hover &__icon path{
+      fill: $orange-light;
+    }
+    &:active {
+      color: $orange-dark;
+    }
+    &:active &__icon path{
+      fill: $orange-dark;
+    }
+
+
+    &__icon {
+      margin-right: 3px;
+      width: 16.5px;
+      height: 16.5px;
+      & path {
+        fill: $orange-primary;
+        transition: fill 0.3s ease;
+      }      
+    }
+    &__number {
+      margin-left: -1px;
+      @include font-14-normal;
+      line-height: 14px;
+
+      color: $orange-primary;
+      transition: color 0.3s ease;
+      &:focus-visible{
+        outline: 0;
+        color: $orange-primary;
+      }
+
+    }
+  }
+  &__info {
+    width: 55.5%;
+    &__list{
+      @include ul-reset;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    &__link {
+      padding: 0 10px;
+      @include font-14-normal;
+      line-height: 14px;
+
+      color: $grey-secondary;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      &:focus-visible {
+        outline: 0;
+        background-color: $bgc-pirple-dark;
+        color: $purple-dark;
+      }
+      &:hover {
+        color: $purple-primary;
+      }
+      &:active {
+        color: $purple-dark;
+      }
+    }
+  }
+  &__middle {
+    padding-top: 33px;
+    padding-bottom: 14.5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__logo svg{
+    width: 187px;
+    height: 27px;
+  }
+  &__bottom {
+    padding-top: 14.5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }  
+}
+
+.nav {
+  width: 74.5%;
+  &__list {
+    @include ul-reset;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__link {
+    padding: 0 10px;
+    @include font-16-normal;
+    line-height: 22px;
+
+    color: $grey-primary;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    &:focus-visible {
+      outline: 0;
+      background-color: $bgc-pirple-dark;
+    }
+    &:hover {
+      color: $purple-primary;
+    }
+    &:active {
+      color: $purple-dark;
+    }
+  }
+}
+
+.region {
+  &__label {
+    margin-right: 23px;
+    display: flex;
+    align-items: center;
+    justify-content: start;   
+  }
+  &__text {
+    margin-right: 4px;
+    @include font-16-normal;
+    line-height: 19px;
+
+    color: $grey-primary;
+  }
+  &__select {    
+    position: relative;
+    width: 85px;
+    cursor: pointer;
+    &:focus-visible{
+      outline: 0;
+    }
+    &:focus-visible &__header{      
+      color: $purple-dark;  
+      background-color: $bgc-pirple-dark      
+    }
+    &:focus-visible &__header::after{
+      background-image: url(../images/sprite.svg#select__arrow-dark);
+    }
+    &:hover &__header span{
+      color: $purple-light;        
+    }
+    &:hover &__header::after{
+      background-image: url(../images/sprite.svg#select__arrow-light);
+    }
+    &:active &__header span{
+      color: $purple-dark;        
+    }
+    &:active &__header::after{
+      background-image: url(../images/sprite.svg#select__arrow-dark);
+    }    
+    &__header{
+      position: relative;
+      padding-right: 20px;
+      transition: color 0.32s ease, background-color 0.3s ease;
+      &:after{
+        content: "";
+        position: absolute;
+        top: calc(50% - 5px);
+        right: 8px;
+        width: 10px;
+        height: 10px;
+        background-image: url(../images/sprite.svg#select__arrow-primary);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        transition: transform 0.3s ease;
+      }
+    }
+    &__current{
+      @include font-16-normal;
+      line-height: 19px;
+  
+      color: $purple-primary;
+    }
+  }
+&__dropdown{      
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 26px;
+    left: -5px;
+    border: 2px solid $border-grey-light;
+    background-color: $white;
+    transform-origin: top;
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+    &__item {
+      outline: 0;
+      margin-bottom: 11px;
+      @include font-14-normal;
+      line-height: 18px;
+
+      color: $grey-primary;
+      transition: color 0.3s ease, background-color 0.3s ease;
+      &:focus-visible:not(&:hover){
+        background-color: $bgc-pirple-dark;
+      }
+      &:hover {
+        color: $purple-light;
+      }
+      &:active {
+        color: $purple-dark;
+      }
+    }
+  }
+}
+  .select-open .select__header::after{
+    transform: rotate(180deg);
+  }
+  .select-open .dropdown {
+    transform: scaleY(1);
+  }
+
+.search {
+  &__form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__label {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+  }  
+  &__icon-arrow {
+    & path{
+      stroke: $purple-primary;
+      transition: stroke 0.3s ease;
+    }
+    & circle {
+      fill: transparent;
+      transition: stroke 0.3s ease, fill 0.3s ease;
+    }
+  }
+  &__btn{    
+    @include btn-reset;
+    position: absolute;
+    top: calc(50% - 16px);
+    right: 36px;
+    width: 33px;
+    height: 32px; 
+    &:focus-visible {
+      outline: 0;
+    } 
+    &:focus-visible svg.search__icon-arrow g circle {
+      stroke: $purple-primary;
+      fill: $purple-light;
+    }
+    &:focus-visible svg.search__icon-arrow g path {
+      stroke: white; 
+    }
+    &:hover .search__icon-arrow g path {
+      stroke: $white;
+    }
+    &:hover  .search__icon-arrow g circle {
+      stroke: $purple-primary;
+      fill: $purple-primary;
+    }    
+    &:active .search__icon-arrow g path {
+      stroke: $white;
+    }
+    &:active  .search__icon-arrow g circle {
+      stroke: $purple-dark;
+      fill: $purple-dark;
+    } 
+  }
+  &__input {
+    padding: 17.5px 60px;
+    min-width: 761px;
+    width: 100%;
+    background-color: $bgc-primary;
+    border: 2px solid $bgc-primary;
+    border-radius: 10px 0px 0px 10px;
+    @include font-16-normal;
+    line-height: 19px;
+
+    color: $grey-primary;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    &::placeholder{
+      @include font-16-normal;
+
+      color: $grey-secondary;
+    }   
+    &:focus,
+    &:focus-visible {
+      outline: 0;
+      background-color: $bgc-pirple-light;
+      border-color: $border-pirple;
+    } 
+    &:hover {
+      background-color: $bgc-grey;
+    }
+    &:active ~ .search__icon-loop path{
+      fill: $purple-primary;
+    }
+    &:not(:placeholder-shown) ~ .search__icon-loop path{
+      fill: $purple-primary;
+    }
+  }
+  &__icon-loop {
+    position: absolute;
+    top: calc(50% - 8px);
+    left: 34px;
+    & path {
+      fill: $grey-secondary;
+      transition: fill 0.3s ease;
+    }
+  }
+  &__select {
+    width: 300px;
+    position: relative;
+    cursor: pointer;
+    &:focus-visible &__header{
+      background-color: $bgc-pirple-light;
+      border-color: $border-pirple;
+      color: $purple-primary;
+    }
+    &:focus-visible {
+      outline: 0;      
+    }
+    &:hover &__header {
+      border-color: $border-pirple;
+      color: $purple-primary;
+    }
+    &:active &__header {
+      border-color: $border-pirple-dark;
+      color: $purple-primary;
+    }
+    &__header {
+      position: relative;
+      padding: 16px 32px;
+      background: $white;      
+      z-index: 3;
+      border: 2px solid $border-grey-light;
+      border-radius: 0px 10px 10px 0px;
+      transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+      &:after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        top: calc(50% - 4px);
+        right: 32px;
+        background-image: url(../images/sprite.svg#select__arrow-primary);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;  
+      }
+    }
+    &__current {
+      @include font-16-normal;
+      line-height: 22px;
+
+      color: $purple-primary;
+    }
+  }
+  &__dropdown {
+    width: 100%;
+    height: 208px;
+    padding: 35px 42px 0px 27px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 45px;
+    left: 0px;
+    border: 2px solid $border-grey-light;
+    border-radius: 0px 10px 10px 10px;
+    transform-origin: top;
+    z-index: 2;
+    transform: scaleY(0);
+    transition: transform 0.3s ease;    
+    &__item {
+      margin-bottom: 14px;
+      transition: color 0.3s ease;
+      &:hover {
+        color: $purple-light;
+      }
+      &:active {
+        color: $purple-dark;
+      }
+    }
+  }
+}
+
+.personal {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  &__accaunt{
+    @include btn-reset;
+    margin-right: 24px;
+    padding: 4px;
+    transition: background-color 0.3s ease;
+    & svg path {
+      transition: fill 0.3s ease;
+    }
+    &:focus-visible:not(:hover) {
+      outline: 0;
+      background-color: $bgc-pirple;
+    }
+    &:focus-visible svg path{
+      fill: $white;
+    }
+    &:hover svg path{
+      fill: $purple-light;
+    }
+    &:active svg path{
+      fill: $purple-dark;
+    }
+  }
+  &__cart {
+    @include btn-reset;
+    position: relative;
+    padding: 4px 4px 4px 12px;
+    &__count{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 10px;
+      left: 2px;
+      width: 14px;
+      height: 15px;
+      border-radius: 50%;
+      background-color: $orange-primary;
+      @include font-14-normal;
+      font-size: 10px;
+      line-height: 10px;
+
+      color: $white;
+    }
+    & svg path {
+      transition: fill 0.3s ease;
+    }
+    &:focus-visible:not(:hover) {
+      outline: 0;
+      background-color: $bgc-pirple;
+    }
+    &:focus-visible svg path{
+      fill: $white;
+    }
+    &:hover svg path{
+      fill: $purple-light;
+    }
+    &:active svg path{
+      fill: $purple-dark;
+    }
+  }
+}
+
 
 

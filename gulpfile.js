@@ -21,7 +21,7 @@ const clean = () => {
 
 const resources = () => {
   return src('src/resources/**')
-  .pipe(dest('dist'))
+  .pipe(dest('dist/lib'))
 }
 
 const styles = () => {

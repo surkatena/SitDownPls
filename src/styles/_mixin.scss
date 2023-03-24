@@ -1,0 +1,27 @@
+@mixin ul-reset {
+  padding: 0;
+  list-style: none;
+}
+
+@mixin btn-reset {
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+}
+
+@mixin font-16-normal {
+  font-family: 'Open Sans', Verdana, Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;  
+}
+
+@mixin font-14-normal {
+  font-family: 'Open Sans', Verdana, Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;  
+}
