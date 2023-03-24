@@ -133,12 +133,14 @@ body {
   &__top {
     padding-top: 15px;
     padding-bottom: 15px;
+    background-color: $bgc-primary;
+  }
+  &__wrapper {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: nowrap;
-    background-color: $bgc-primary;
   }
   &__contacts{
     display: flex;
@@ -506,6 +508,7 @@ body {
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;  
+        transition: transform 0.3s ease;
       }
     }
     &__current {
@@ -527,6 +530,7 @@ body {
     left: 0px;
     border: 2px solid $border-grey-light;
     border-radius: 0px 10px 10px 10px;
+    background-color: $white;
     transform-origin: top;
     z-index: 2;
     transform: scaleY(0);
@@ -612,4 +616,138 @@ body {
 }
 
 
+
+
+.footer {
+  width: 100%;
+  &__top {
+    padding-top: 25px;
+    padding-bottom: 19px;
+    width: 100%;
+    background-color: $bgc-grey;
+  }
+  &__grid {
+    display: grid;
+    grid-template-columns: 2fr 4fr;
+  }
+  &__logo {
+    margin-bottom: 23px;
+    width: min-content;
+  }
+  &__logo svg{
+    width: 187px;
+    height: 27px;
+  }
+  &__nav {
+    padding-left: 10px;
+    display: flex;
+    align-items: start;
+
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    &-about {
+      margin-right: 12.5%;
+    }
+    &-services {
+      margin-right: 15.5%;
+    }
+    &-contacts {
+      margin-right: auto;
+    }
+  }  
+  &__h4 {
+    @include font-16-normal;
+    line-height: 16px;
+
+    color: $grey-primary
+  }
+  &__list {
+    margin-top: 6px;
+    @include ul-reset;    
+  }  
+  &__item{
+    margin-bottom: 5px;
+  }
+  &__link {
+    padding: 0 3px;
+    @include font-14-normal;
+    line-height: 14px;
+
+    color: $grey-secondary;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    &:focus-visible {
+      outline: 0;
+      background-color: $bgc-pirple-dark;
+      color: $purple-dark;
+    }
+    &:hover {
+      color: $purple-primary;
+    }
+    :active {
+      color: $purple-dark;
+    }
+  }
+  &__bottom {
+    padding: 5px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $white;
+  }
+  &__copyright {
+    @include font-14-normal;
+    line-height: 19px;
+
+    color: $grey-secondary;
+  }
+}
+
+.social {
+  margin-left: -3px;
+  &__list {
+    @include ul-reset;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  &__item:not(:last-child) {
+    margin-right: 12px;
+  }
+  &__link {
+    padding: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    transition: background-color 0.3s ease;
+    & svg {
+      width: 30px;
+      height: 30px;
+    }
+    &__link svg path{
+      fill: $grey-secondary;
+      transition: fill 0.3s ease;
+    }
+    &:focus-visible:not(:hover) {
+      background-color: $purple-light;
+    }
+    &:focus-visible {
+      outline: 0;
+    }
+    &:focus-visible:not(:hover) svg path {
+      fill: $white;
+    }
+    &:hover svg path {
+      fill: $purple-primary;
+    }
+    &:active svg path {
+      fill: $purple-dark;
+    }
+  }
+  
+}
 
