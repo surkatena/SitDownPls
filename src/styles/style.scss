@@ -751,3 +751,165 @@ body {
   
 }
 
+.breadcrumb {
+  padding-top: 10px;
+  padding-bottom: 36px;
+  &__line {
+    @include font-14-normal;
+    line-height: 14px;
+
+    color: $grey-secondary;
+  }
+  &__item {
+    margin-right: 5px;
+  }
+  &__slash{
+    margin-right: 0px;
+  }
+  &__active {
+    margin-right: 0;
+
+    color: $purple-dark;
+  }
+}
+
+// Страница "Партнерство"
+
+.partnership {
+  &__title {
+    margin-bottom: 17px;
+    @include font-32-normal;
+    line-height: 1;
+
+    color: $grey-primary;
+  }
+  &__section {
+    padding-top: calc($section-gap / 2);
+    padding-bottom: calc($section-gap / 2);
+  }
+  &__h2 {
+    margin-bottom: 13px;
+    @include font-24-normal;
+    line-height: 33px;
+
+    color: $grey-primary;
+  }
+  &__text {
+    width: 65%;
+    @include font-16-normal;
+    line-height: 1.8;
+
+    color: $grey-secondary;
+  }
+  &__list {
+    &-ul {
+      width: 49%;
+      @include ul-reset;
+      padding-left: 36px;
+    }
+    &-ol{
+      width: 65%;
+      padding-left: 18px;
+      counter-reset: num;
+    }
+    &-ol .partnership__item-ol::before {
+      content: counter(num) '. '; 
+      counter-increment: num;
+      display: inline-block;
+      margin-left: -18px;
+      margin-right: 10px;
+      @include font-16-normal;
+      font-weight: 600;
+      line-height: 1.8;
+
+      color: $orange-primary;
+    }
+  }
+  &__item {
+    &-ul{
+      position: relative;
+      @include font-16-normal;
+      line-height: 1.5;
+  
+      color: $grey-secondary;   
+      &::after {
+        content: "";
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        top: -3px;
+        left: -36px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+      }   
+    }
+    &-ul:not(:last-child) {
+      margin-bottom: 10px;
+    }
+    &-network::after {
+      background-image: url(../images/sprite.svg#partnership__network);
+    }
+    &-case::after {
+      background-image: url(../images/sprite.svg#partnership__case);
+    }
+    &-git::after {
+      background-image: url(../images/sprite.svg#partnership__git);
+    }
+
+    &-ol {
+      margin: 0;
+      display: flex;
+      @include font-16-normal;
+      line-height: 1.8;
+      list-style-type: none;       
+  
+      color: $grey-secondary;
+    }    
+    &-ol:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+  &__h3 {
+    margin-bottom: 13px;
+    @include font-16-normal;
+    font-weight: 600;
+    line-height: 1.38;
+
+    color: $orange-primary; 
+  }
+  &__descr {
+    margin-bottom: 12px;
+    width: 65%;
+    @include font-16-normal;
+    line-height: 1.8;
+
+    color: $grey-secondary;
+    &-last {
+      margin-bottom: 0;
+    }
+  }
+  &__guarantee {
+    padding-top: 42px;
+    padding-bottom: 75px;
+    padding-left: 108px;
+    width: 50%;
+    position: relative;
+    @include font-24-normal;
+    line-height: 1.5;
+
+    color: $grey-primary;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 19px;
+      left: 0;
+      width: 77px;
+      height: 116px;
+      background-image: url(../images/partnership__pencil.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+  }
+}
