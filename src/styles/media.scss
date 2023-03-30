@@ -1,0 +1,543 @@
+@media (max-width: 1715px) {
+  .container {
+    padding: 0 $padding-1715;
+  }  
+}
+@media (max-width: 1406px) {
+  .container {
+    padding: 0 $padding-1024;
+  }  
+  .header {
+    &__top {
+      padding: 0;
+      background-color: $white;
+    }
+    &__top .personal {
+      display: flex;
+    }
+    &__wrapper {
+      width: 100%;
+      flex-wrap: wrap;
+    }
+    &__contacts {
+      padding: 20px 0;
+      width: 100%;
+      justify-content: space-between;
+    }
+    &__info {
+      padding: 16px 0;
+      width: 75.5%;
+      background-color: $bgc-primary;
+      // background-color: $grey_primary;
+      position: relative;      
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: $padding-1024;
+        display: block;
+        background-color: inherit;        
+        border-left: 1px solid $bgc-primary;
+        border-right: 1px solid $bgc-primary;
+      }
+      &::before {
+        right: 100%;
+        width: $padding-1024;
+      }
+      &__item:first-child {
+        margin-left: -10px;
+      }
+    }
+    &__middle {
+      padding-top: 28px;
+    }
+    &__middle .personal {
+      display: none;
+    }
+    &__bottom {
+      padding-top: 22.5px;
+    }
+    &__bottom .personal {
+      display: none;
+    }
+  }
+
+  .search {
+    width: 100%;
+    &__label {
+      width: 69%;
+    }
+    &__select {
+      width: 31%;
+      &__header {
+        padding: 16px 27px;
+      }
+    }
+  }
+  
+  .personal {
+    padding: 5.5px 0;
+    width: 24.5%;
+    background-color: $bgc-primary;
+    // background-color: $grey_primary;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: $padding-1024;
+      display: block;
+      background-color: inherit;        
+      border-left: 1px solid $bgc-primary;
+      border-right: 1px solid $bgc-primary;
+      left: 100%;
+      width: $padding-1024;
+    }
+  }
+  
+  
+  .partnership {
+    &__h2 {
+      margin-bottom: 11px;
+    }
+    &__text {
+      width: 88%;
+    }
+    &__list {
+      &-ul {
+        width: 65%;
+      }
+      &-ol {
+        width: 88%;
+      }
+    }
+    &__item {
+      &-ul:not(:last-child) {
+      margin-bottom: 12px;
+      }
+      &-ol {        
+        line-height: 1.85;
+      }
+      &-ol:not(:last-child) {
+        margin-bottom: 10px;
+      }
+    }
+    &__descr {
+      width: 88%;
+    }
+    &__guarantee  {
+      padding-top: 52px;
+      width: 65%;
+    }
+  }
+
+
+  .footer {
+    &__grid {
+      grid-template-columns: 1fr 4fr;
+    }
+    &__nav {
+      padding-left: 28px;
+    }
+    &__info {
+      &-about {
+        margin-right: 9.5%;
+      }
+      &-services {
+        margin-right: 12%;
+      }
+    }
+  }
+
+}
+
+@media (max-width: 927px){
+  .container {
+    padding: 0 $padding-768;
+  }
+  .header {
+    &__top .personal {
+      display: none;
+    }
+    &__info {
+      padding: 14px 0;
+      width: 100%;
+      // background-color: $grey-secondary;
+      &::before {        
+        width: $padding-768;      
+        border-left: 1px solid $bgc-primary;
+        border-right: 1px solid $bgc-primary;
+        right: 100%;
+        width: $padding-768;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: $padding-768;
+        display: block;
+        background-color: inherit;        
+        border-left: 1px solid $bgc-primary;
+        border-right: 1px solid $bgc-primary;
+        left: 100%;
+        width: $padding-768;
+      }
+      &__item:last-child {
+        margin-right: -10px;
+      }
+    }
+    &__middle {
+      position: relative;
+      padding-top: 24px;
+    }
+    &__middle .personal {
+      display: flex;
+      width: max-content;
+      background-color: $white;
+      &::before{
+        border: 0;
+      }
+    }
+    &__logo {
+      padding-left: 80px;
+    }
+    &__bottom {
+      padding-top: 6.5px;
+    }
+  }
+
+  .search {
+    &__btn {
+      right: 27px;
+    }
+    &__select__header {
+      padding: 16px 33px;
+  }
+  }
+
+  .burger {
+    @include btn-reset;
+    padding: 3px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    &:focus-visible {
+      background-color: $bgc-pirple-dark;
+    }
+    &:hover &__line{
+      background-color: $purple-light;
+    }
+    &:active &__line{
+      background-color: $purple-dark;
+    }
+    &__line {
+      height: 3px;
+      width: 24px;
+      border-radius: 4px;
+      background-color: $purple-primary;
+      transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
+      &:first-child {
+        margin-bottom: 7px;
+      }
+      &:last-child{
+        margin-top: 7px;
+      }
+    }
+    &-open span:last-child{
+      margin-top: -5.5px;
+      transform: rotate(45deg);
+    }
+    &-open span:first-child{
+      margin-bottom: 0;
+      transform: rotate(135deg);
+    }
+    &-open span:nth-child(2){
+      opacity: 0;
+    }
+    &-open ~ .nav {
+      transform: translate(0px);
+    } 
+  }
+
+  .nav {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 50%;
+    z-index: 5;
+    background-color: $white;
+    box-shadow: 10px 0px 19px 8px rgba(0,0,0,0.1);
+    border-radius: 0px 20px 20px 0px;
+    transform: translate(-1000px);
+    transition: transform 0.5s ease;
+    &__list {
+      flex-direction: column;
+      align-items: start;
+    }
+    &__item:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+
+  .partnership {
+    &__text {
+      width: 100%;
+    }
+    &__list {
+      &-ul {
+        width: 100%;
+      }
+      &-ol {
+        width: 101%;
+      }
+    }
+    &__item {
+      &-ol:not(:last-child) {
+      margin-bottom: 8px;
+      }
+    }
+    &__descr {
+      margin-bottom: 10px;
+      width: 100%;
+      line-height: 1.83;
+      &-last {
+        margin-bottom: 0;
+      }
+    }
+    &__guarantee {
+      padding-top: 50px;
+      width: 100%;
+      &::after {
+        top: 28px;
+      }
+    }
+  }
+
+  .footer {
+    &__grid{
+      grid-template-columns: 1fr;
+      grid-template-rows: 2;
+    }
+    &__social {
+      margin-bottom: 23px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    &__logo {
+      margin-bottom: 0;
+    }
+    &__nav {
+      padding-left: 0;
+    }
+    &__info {
+      &-about {
+        margin-right: 5.5%;
+      }
+      &-services {
+        margin-right: 8%;
+      }
+    }
+    &__bottom {
+      padding: 4px 0;
+    }
+  }
+
+  .social {
+    &__list{
+      margin-top: -4px;
+    }
+    &__item:not(:last-child) {
+      margin-right: 11px;
+    }
+    &__item:last-child {
+      margin-right: -3px;
+    }
+  }
+}
+
+@media (max-width: 721px) {
+  .container {
+    padding: 0 $padding-320;
+  }
+  .header {
+    padding-bottom: 32px;
+    &__top &__logo {
+      padding: 12px 0;
+      display: flex;
+      justify-content: center;
+      background-color: $bgc-primary;
+    }
+    &__contacts {
+      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: start;
+    }
+    &__region {
+      margin-bottom: 18px;
+    }
+    &__phone__icon {
+      margin-right: 5px;
+    }
+    &__info {
+      display: none;
+    }
+    &__middle {
+      position: relative;
+      padding-top: 0;
+      padding-bottom: 0;
+      &:before,
+      &:after {
+        content: "";
+        position: absolute;
+        height: 1px;
+        width: calc(100% + 2 * $padding-320);
+        display: block;
+        background-color: $border-grey-light;
+        z-index: 3;
+      }
+      &:before {
+        top: 0;
+        left: -$padding-320;
+      }
+      &:after {
+        bottom: 0;
+        left: -$padding-320;
+        
+      }
+    }
+    &__middle .personal:before {
+      display: none;
+    }
+    &__middle &__logo{
+      display: none;
+    }
+  }
+
+  .search {
+    padding-top: 7px;
+    &__form {
+      flex-direction: column;
+    }
+    &__label {
+      margin-bottom: 16px;
+      width: 100%;
+    }
+    &__input {
+      padding: 20px 57px;
+      border-radius: 10px;
+    }
+    &__btn {
+      right: 31px;
+    }
+    &__select {
+      width: 100%;
+    }
+    &__select__header {
+      border-radius: 10px;
+    }
+  }
+
+  .nav {
+    top: 62px;
+    left: 0;
+    width: 100%;
+  }
+  
+
+  .breadcrumb {
+    display: none;
+  }
+
+  .partnership{
+    &__title {
+      margin-bottom: 11px;
+      @include font-24-normal;
+      line-height: 1;
+      // color: $grey-primary;
+    }
+    &__section {
+      padding-top: 14px;
+      padding-bottom: 13px;
+    }
+    &__h2 {
+      margin-bottom: 9px;
+      @include font-16-normal;
+    }
+    &__text {
+      @include font-14-normal;
+      line-height: 1.79;
+    }
+    &__list {
+      &-ul {
+        margin-top: -4px;
+        margin-bottom: 4px;
+      }
+      &-ol {
+        width: 99%;
+        margin-top: -4px;
+        margin-bottom: 4px;
+      }
+    }
+    &__item {
+      &-ul {
+        @include font-14-normal;
+        line-height: 1.5;
+      }
+      &-ol {
+        @include font-14-normal;
+        line-height: 1.78;
+      }
+      &-ol:not(:last-child) {
+        margin-bottom: 12px;
+      }
+    }
+    &__plus{
+      margin-bottom: 10px;
+      @include font-14-normal;
+      line-height: 1.4;
+    }
+    &__descr {
+      @include font-14-normal;
+      line-height: 1.8;
+    }
+    &__guarantee {
+      padding-top: 28px;
+      padding-bottom: 58px;
+      padding-left: 52px;
+      @include font-16-normal;
+      line-height: 1.5;
+      &:after {
+        top: 37px;
+        width: 36px;
+        height: 54px;
+      }
+    }
+  }
+
+  .footer {
+    &__social {
+      flex-direction: column;
+    }
+    &__logo {
+      margin-bottom: 20px;
+    }
+    &__nav {
+      display: grid;
+      grid-template-columns: minmax(156px, auto) minmax(156px, auto);
+      row-gap: 20px;
+    }
+      &__info {
+    margin-right: 0;
+    }
+  }
+}

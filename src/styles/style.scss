@@ -135,6 +135,12 @@ body {
     padding-bottom: 15px;
     background-color: $bgc-primary;
   }
+  &__top .personal {
+    display: none;
+  }
+  &__top &__logo {
+    display: none;
+  }
   &__wrapper {
     width: 100%;
     display: flex;
@@ -227,7 +233,11 @@ body {
     align-items: center;
     justify-content: space-between;
   }
+  &__middle .personal {
+    display: none;
+  }
   &__logo svg{
+    display: block;
     width: 187px;
     height: 27px;
   }
@@ -237,19 +247,27 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-  }  
+  } 
+  &__bottom .personal {
+    display: flex;
+  } 
 }
 
 .nav {
-  width: 74.5%;
+  width: 75%;
   &__list {
     @include ul-reset;
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
-  &__link {
+  &__item {
     padding: 0 10px;
+  }
+  &__item:last-child {
+    margin-right: -10px;
+  }
+  &__link {
     @include font-16-normal;
     line-height: 22px;
 
@@ -342,6 +360,7 @@ body {
     left: -5px;
     border: 2px solid $border-grey-light;
     background-color: $white;
+    z-index: 100;
     transform-origin: top;
     transform: scaleY(0);
     transition: transform 0.3s ease;
@@ -550,12 +569,12 @@ body {
 
 .personal {
   width: 10%;
-  display: flex;
+  // display: flex;
   justify-content: end;
   align-items: center;
   &__accaunt{
     @include btn-reset;
-    margin-right: 24px;
+    margin-right: 26px;
     padding: 4px;
     transition: background-color 0.3s ease;
     & svg path {
@@ -579,6 +598,7 @@ body {
     @include btn-reset;
     position: relative;
     padding: 4px 4px 4px 12px;
+    margin-right: -4px;
     &__count{
       display: flex;
       align-items: center;
@@ -634,7 +654,8 @@ body {
     margin-bottom: 23px;
     width: min-content;
   }
-  &__logo svg{
+  &__logo svg {
+    display: inline-block;
     width: 187px;
     height: 27px;
   }
@@ -762,6 +783,17 @@ body {
   }
   &__item {
     margin-right: 5px;
+    transition: outline-color 0.3s ease, color 0.3s ease; 
+    &:focus-visible {
+      outline: 1px solid $grey-secondary;
+      outline-offset: 3px;
+    }
+    &:hover {
+      color: $grey-primary;
+    }
+    &:active {
+      color: $purple-primary;
+    }
   }
   &__slash{
     margin-right: 0px;
@@ -808,6 +840,7 @@ body {
       padding-left: 36px;
     }
     &-ol{
+      margin: 0;
       width: 65%;
       padding-left: 18px;
       counter-reset: num;
@@ -857,8 +890,7 @@ body {
       background-image: url(../images/sprite.svg#partnership__git);
     }
 
-    &-ol {
-      margin: 0;
+    &-ol {      
       display: flex;
       @include font-16-normal;
       line-height: 1.8;
@@ -867,7 +899,7 @@ body {
       color: $grey-secondary;
     }    
     &-ol:not(:last-child) {
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
   }
   &__h3 {
@@ -890,7 +922,7 @@ body {
     }
   }
   &__guarantee {
-    padding-top: 42px;
+    padding-top: 56px;
     padding-bottom: 75px;
     padding-left: 108px;
     width: 50%;
@@ -902,7 +934,7 @@ body {
     &::after {
       content: "";
       position: absolute;
-      top: 19px;
+      top: 33px;
       left: 0;
       width: 77px;
       height: 116px;
@@ -913,3 +945,8 @@ body {
     }
   }
 }
+
+
+@import "media.scss";
+
+
