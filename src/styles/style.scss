@@ -243,7 +243,7 @@ body {
   }
   &__bottom {
     width: 100%;
-    padding-top: 14.5px;
+    padding-top: 18.5px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -425,11 +425,11 @@ body {
     &:focus-visible {
       outline: 0;
     } 
-    &:focus-visible svg.search__icon-arrow g circle {
+    &:focus-visible svg circle {
       stroke: $purple-primary;
       fill: $purple-light;
     }
-    &:focus-visible svg.search__icon-arrow g path {
+    &:focus-visible svg path {
       stroke: white; 
     }
     &:hover .search__icon-arrow g path {
@@ -446,6 +446,10 @@ body {
       stroke: $purple-dark;
       fill: $purple-dark;
     } 
+    & svg path,
+    & svg circle {
+      transition: fill 0.3s ease, stroke 0.3s ease;
+    }
   }
   &__input {
     width: 100%;
@@ -804,6 +808,579 @@ body {
     color: $purple-dark;
   }
 }
+
+
+.star svg{
+  width: 16px;
+  height: 15px;
+}
+
+// Страница "Карточка товара"
+.product {
+  margin-top: -5px;
+  margin-bottom: 80px;
+  display: grid;
+  grid-template-columns: minmax(624px, 1fr) 1fr;
+  gap: $gap;
+  &__photo {  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &__item {
+      &-main {
+        margin-bottom: 16px;
+      }
+    }
+    &__item:not(:last-child) {
+      margin-right: 39px;
+    }
+    &__wrapper {
+      padding: 8px 25px;
+      width: 100%;
+      background-color: $bgc-primary;
+      display: flex;
+      flex-wrap: nowrap;
+    }
+  }
+  &__name {
+    padding-top: 19px;
+    align-self: start;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  &__title {
+    margin-bottom: 5px;
+    @include font-24-normal;
+    line-height: 1.3;
+
+    color: $grey-primary;
+  }
+  &__subtitle {
+    margin-bottom: 20px;
+    @include font-14-normal;
+    line-height: 1;
+    color: $grey-secondary;
+  }
+  &__price {
+    margin-bottom: 23px;
+    @include font-36-normal;
+    line-height: 1.3;
+
+    color: $grey-primary;
+  }
+  &__oneclick {
+    @include btn-reset;
+    margin-bottom: 11px;
+    @include btn__fill;
+    // padding: 17px 39px;
+    // border-radius: 10px;
+    // background-color: $purple-primary;
+
+    // color: $white;
+  }
+  &__add {
+    cursor: pointer;
+    @include btn-reset;
+    padding: 5px 30px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+
+    color: $purple-primary;
+    transition: border-color 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+    &:focus-visible {
+      border-color: $purple-primary;
+    }
+    &:hover {
+      background-color: $purple-light;
+      color: $white;
+    }
+    &:active {
+      background-color: $purple-dark;
+      color: $white;
+    }
+  }
+  &__descr {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  &__h3 {
+    margin-bottom: 8px;
+    @include font-16-normal;
+    font-weight: 600;
+    line-height: 1;
+
+    color: $grey-primary;
+  }
+  &__info__text {
+    @include font-14-normal;
+    line-height: 1.8;
+
+    color: $grey-primary;
+  }
+  &__info__text:not(:last-child) {
+    margin-bottom: 6px;
+  }
+  &__scheme__img:not(:last-child) {
+    margin-right: 27px;
+  }
+  &__list {
+    @include ul-reset;
+  }
+  &__key {
+    display: inline-block;
+    position: relative;
+    margin-right: -30%;
+    width: 52%;
+    overflow: hidden;
+    vertical-align: bottom;
+    @include font-14-normal;
+    line-height: 1.78;
+
+    color: $grey-secondary;
+    &::after {
+      content: "....................................................................";
+      display: inline-block;
+      width: 100%;
+      margin: 0 -99% 0 3px;
+      letter-spacing: 2px;
+    }
+  }
+  &__value {
+    margin-left: 30%;
+    width: 47%;
+    vertical-align: bottom;
+    display: inline-block;
+    @include font-14-normal;
+    line-height: 1.78;
+
+
+    color: $grey-primary;    
+  }
+}
+
+.other {
+  &__top {
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__h3 {
+    @include font-24-normal;
+    line-height: 1.3;
+
+    color: $grey-primary;
+  }
+  &__pred,
+  &__next {
+    @include btn-reset; 
+    cursor: pointer;
+    &:focus-visible:not(:disabled) svg circle{
+      fill: $purple-light;
+      stroke: $purple-primary;
+    }  
+    &:focus-visible:not(:disabled) svg path{      
+      stroke: $white;
+    }  
+    &:hover:not(:disabled) svg circle{
+      fill: $purple-primary;
+      stroke: $purple-primary;
+    }  
+    &:hover:not(:disabled) svg path{      
+      stroke: $white;
+    } 
+    &:active:not(:disabled) svg circle{
+      fill: $purple-dark;
+      stroke: $purple-dark;
+    }  
+    &:active:not(:disabled) svg path{      
+      stroke: $white;
+    }    
+  }
+  &__pred svg,
+  &__next svg {
+    display: block;
+    width: 32px;
+    height: 32px;
+    transition: transform 0.3s ease;
+  }
+  &__pred svg path,
+  &__next svg circle {    
+    transition: stroke 0.3s ease, fill 0.3s ease;
+  }
+  &__pred svg {
+    transform: rotate(180deg);
+  }
+  &__pred {
+    margin-right: 7px;
+  }
+  
+  &__disabled svg path,
+  &__disabled svg circle {
+    stroke: $grey-secondary;
+  }
+  &__bottom {
+    margin-bottom: 70px;
+  }
+}
+
+.item {
+  max-width: 296px;
+  padding: 32px 30px;
+  min-height: 420px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  align-items: flex-start;
+  justify-content: space-between;
+  box-sizing: border-box;
+  background-color: $bgc-primary;
+  border-radius: 10px;
+  &__star {
+    @include font-16-normal;
+    line-height: 1.3;
+
+    color: $orange-primary;
+  }
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  &__img {
+    margin-left: -10px;
+    margin-right: -10px;
+    margin-bottom: 17px;
+    max-width: 112%;
+    align-self: center;
+  }
+  &__name {
+    margin-bottom: 24px;
+    @include font-24-normal;
+    line-height: 1.3;
+
+    color: $grey-primary;
+  }
+  &__price {
+    margin-bottom: 24px;
+    @include font-16-normal;
+    line-height: 1.3;
+
+    color: $grey-secondary;
+  }
+  &__btn {
+    @include btn-reset;
+    padding: 15px 35px;
+    border: 1px solid $purple-primary;
+    border-radius: 10px;
+
+    color: $purple-primary;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    &:focus-visible {
+      background-color: $purple-light;
+      border-color: $purple-primary;
+      color: $white;
+    }
+    &:hover {
+      background-color: $purple-primary;
+      color: $white;
+    }
+    &:active {
+      border-color: $purple-dark;
+      background-color: $purple-dark;
+      color: $white;
+    }
+  }
+}
+
+// swiper
+
+.swiper {
+  width: 100%;
+}
+
+// Модальное окно "Купить в 1 клик"
+.modal__close {
+  cursor: pointer;
+  @include btn-reset;
+  padding: 5px;
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  transition: background-color 0.3s ease, transition 0.3s ease;
+  &:focus-visible {
+    background-color: $bgc-pirple-dark;
+  }
+  &:hover {
+    background-color: $bgc-pirple-dark;
+    transform: scale(1.1);
+  }
+  &:active {
+    background-color: $bgc-pirple-light;
+  }
+}
+
+.modal__buy {  
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 100;
+  background-color: rgba($color: #000000, $alpha: 0.3);
+  overflow-y: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  &-open {
+    visibility: visible;
+    opacity: 1;
+  }
+  &__container {
+    margin-top: 182px;
+    position: relative;
+    max-width: 624px;
+    padding: 30px;
+    background-color: $white;
+    border-radius: 10px;
+    z-index: 101;
+  }
+  &__h3 {
+    margin-bottom: 8px;
+    @include font-32-normal;
+    line-height: 1;
+
+    color: $grey-primary;
+  }
+  &__descr {
+    width: 66%;
+    margin-bottom: 30px;
+    @include font-14-normal;
+    line-height: 1.4;
+
+    color: $grey-primary;
+  }
+  &__form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  &__input {
+    width: 100%;
+    margin-bottom: 31px;
+    @include input;
+  }
+  &__input::placeholder {
+    @include font-16-normal;
+    line-height: 2.5;
+
+    color: $grey-secondary;
+  }
+  &__label {
+    width: 100%;
+    position: relative;
+  }
+  &__submit {
+    @include btn-reset;
+    @include btn__fill;
+    margin-bottom: 13px;
+    align-self: flex-start;
+  }
+  &__inner {
+    width: 100%;    
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;   
+  }
+  &__checkbox {
+    display: none;
+    @include font-14-normal;
+    line-height: 1.3;
+
+    color: $grey-primary;
+  }
+  &__agreement {
+    width: 100%;
+    position: relative; 
+    display: flex;
+    align-items: center;
+    @include font-14-normal;
+    line-height: 1.3;
+
+    color: $grey-primary;
+    &::before {
+      content: "";
+      margin-right: 10px;
+      width: 15px;
+      height: 15px;
+      background-color: $white;
+    
+      border: 2px solid $border-grey;
+      border-radius: 2px;
+      transition: background-color 0.3s ease;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 3.5px;
+      left: 3px;
+      width: 10px;
+      height: 10px;
+      background-image: url(../images/sprite.svg#checkbox);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+  }
+  &__agreement-error::before {
+    border-color: $red;
+  }
+  &__checkbox:checked + &__agreement::before {
+    background-color: $purple-primary;
+  }
+  &__checkbox:checked + &__agreement::after {
+    opacity: 1;
+  }
+  &__link {
+    text-decoration: underline;
+    color: $purple-primary;
+  }
+}
+// Модальное окно "Спасибо"
+.modal__thanks {  
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 100;
+  background-color: rgba($color: #000000, $alpha: 0.3);
+  overflow-y: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+  &-open {
+    visibility: visible;
+    opacity: 1;
+  }
+  &__container {
+    margin-top: 182px;
+    position: relative;
+    max-width: 624px;
+    width: 100%;
+    min-height: 420px;
+    padding: 115px 75px;
+    background-color: $white;
+    border-radius: 10px;
+    z-index: 101;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__logo {
+    margin-bottom: 32px;
+    margin-right: 50px;
+    width: 215px;
+    height: 119px;
+  }
+  &__text {
+    @include font-32-normal;
+    line-height: 1;
+    color: $grey-primary;
+  }
+}
+
+.error {
+  border-color: $red;
+  &__text {
+    position: absolute;
+    top: -19px;
+    left: 17px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-family: 'Open Sans', Verdana, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+
+    color: $red;
+    &-show{
+      opacity: 1;
+    }
+  }
+}
+
+.success {
+  border-color: $green;
+}
+
+
+.modal__preview {  
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 100;
+  background-color: rgba($color: #000000, $alpha: 0.3);
+  overflow-y: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  &-open {
+    visibility: visible;
+    opacity: 1;
+  }
+  &__container {
+    margin-top: 142px;
+    position: relative;
+    max-width: 1280px;
+    width: 100%;
+    min-height: 686px;
+    padding: 0;
+    padding-top: 50px;
+    background-color: $white;
+    border-radius: 10px;
+    z-index: 101;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__main {
+    margin-bottom: 50px;
+    width: 83%;
+  }
+  &__wrapper {
+    width: 100%;
+    padding: 20px 50px;
+    display: flex;
+    align-items: center;
+    background-color: $bgc-primary;
+    border-radius: 0px 0px 10px 10px;
+  }
+  &__item:not(:last-child){
+    margin-right: 80px;
+  }
+}
+
+
 
 // Страница "Партнерство"
 

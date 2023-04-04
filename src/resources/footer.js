@@ -96,17 +96,17 @@ function footer() {
             <h4 class="footer__h4">Сотрудничество</h4>
             <ul class="footer__list">
               <li class="footer__item">
-                <a href="./pages/partnership.html" class="footer__link">
+                <a href="./partnership.html" class="footer__link">
                   Поставщикам
                 </a>
               </li>
               <li class="footer__item">
-                <a href="./pages/partnership.html" class="footer__link">
+                <a href="./partnership.html" class="footer__link">
                   Оптовикам
                 </a>
               </li>
               <li class="footer__item">
-                <a href="./pages/partnership.html" class="footer__link">
+                <a href="./partnership.html" class="footer__link">
                   Карьера
                 </a>
               </li>

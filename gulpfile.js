@@ -78,6 +78,9 @@ const fonts = () => {
 
 const normalize = () => {
   return src('src/styles/normalize.css')
+  .pipe(gulpif(argv.prod, cleanCSS({
+    level: 2
+  })))
   .pipe(dest('dist/css'))
 }
 

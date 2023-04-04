@@ -39,3 +39,51 @@
   font-style: normal;
   font-size: 24px;  
 }
+
+@mixin font-36-normal {
+  font-family: 'Open Sans', Verdana, Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 36px;  
+}
+
+@mixin btn__fill{
+  padding: 17px 39px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background-color: $purple-primary;
+  color: $white;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+  &:focus-visible {
+    outline: 0;
+    border-color: $purple-dark;
+    background-color: $purple-primary;
+  }
+  &:hover {
+    background-color: $purple-light;
+  }
+  &:active {
+    background-color: $purple-dark;
+  }
+}
+
+@mixin input {
+  padding: 17px 18px;
+  border: 1px solid transparent;
+  background: $bgc-primary;
+  border-radius: 10px;
+  transition: border-color 0.3s ease;
+  &:focus,
+  &:focus-visible {
+    outline: 0;
+    background-color: $bgc-pirple-light;
+    border-color: $purple-primary;
+  }
+  &:hover {
+    background-color: $bgc-grey;
+    border-color: $border-grey;
+  }
+  &:active {
+    border-color: $border-grey;
+  }
+}
