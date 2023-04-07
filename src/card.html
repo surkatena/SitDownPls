@@ -88,18 +88,41 @@
               </svg>                
             </button>            
             <img class="modal__preview__main" src="./images/modal__photo__main.png" alt="Диван тканевый прямой &ldquo;D-31&rdquo;">            
-            <div class="modal__preview__wrapper">
-              <img class="modal__preview__item" src="./images/modal__photo__01.png" alt="Фото дивана">            
-              <img class="modal__preview__item" src="./images/modal__photo__02.png" alt="Фото дивана">            
-              <img class="modal__preview__item" src="./images/modal__photo__03.png" alt="Фото дивана">            
-              <img class="modal__preview__item" src="./images/modal__photo__04.png" alt="Фото дивана">              
+            <div class="modal__preview__slider swipper__modal">
+              <button class="modal__preview__prev ">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_663_1899)">
+                    <circle cx="16" cy="16" r="15" stroke="#A65CF0" stroke-width="2"/>
+                    <path d="M14 11L19 16L14 21" stroke="#A65CF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </g>                
+                </svg>        
+              </button>
+              <div class="modal__preview__wrapper swiper-wrapper">
+                <img class="modal__preview__item swiper-slide" src="./images/modal__photo__01.png" alt="Фото дивана">            
+                <img class="modal__preview__item swiper-slide" src="./images/modal__photo__02.png" alt="Фото дивана">            
+                <img class="modal__preview__item swiper-slide" src="./images/modal__photo__03.png" alt="Фото дивана">            
+                <img class="modal__preview__item swiper-slide" src="./images/modal__photo__04.png" alt="Фото дивана">              
+              </div>
+              <button class="modal__preview__next ">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_663_1899)">
+                    <circle cx="16" cy="16" r="15" stroke="#A65CF0" stroke-width="2"/>
+                    <path d="M14 11L19 16L14 21" stroke="#A65CF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </g>                
+                </svg>        
+              </button>
             </div>
 
           </div>
         </div>
         <div class="product__photo">
           <a href="#" class="product__photo__item-main ">
-            <img src="./images/product__large.jpg" alt="Диван тканевый прямой &ldquo;D-31&rdquo;">
+            <picture>
+              <source srcset="./images/product__large-320.png" media="(max-width:721px)">
+              <source srcset="./images/product__large.png" media="(max-width:927px)">
+              <source srcset="./images/product__large-1024.png" media="(max-width:1406px)">
+              <img src="./images/product__large.png" alt="Диван тканевый прямой &ldquo;D-31&rdquo;">
+            </picture>
           </a>
           <div class="product__photo__wrapper">
             <a href="#" class="product__photo__item">

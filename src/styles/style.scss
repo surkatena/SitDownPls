@@ -665,22 +665,13 @@ body {
   }
   &__nav {
     padding-left: 10px;
-    display: flex;
-    align-items: start;
+    display: grid;
+    grid-template-columns: minmax(auto, 196px) minmax(auto, 267px) minmax(auto, 249px) minmax(128px, 1fr);
 
   }
   &__info {
     display: flex;
     flex-direction: column;
-    &-about {
-      margin-right: 12.5%;
-    }
-    &-services {
-      margin-right: 15.5%;
-    }
-    &-contacts {
-      margin-right: auto;
-    }
   }  
   &__h4 {
     @include font-16-normal;
@@ -828,9 +819,46 @@ body {
     justify-content: center;
     align-items: center;
     &__item {
+      flex-shrink: 0;
       &-main {
         margin-bottom: 16px;
       }
+      &-main:focus-visible {
+        outline: 0;
+      }
+      &-main img {
+      transition: outline-color 0.3s ease;
+      }
+      &-main:focus-visible img {
+        outline: 1px solid $border-pirple;
+        outline-offset: 10px;
+      }
+      &-main:hover img {
+        outline: 1px solid $border-pirple;
+        outline-offset: 10px;
+      }
+      &-main:active img {
+        outline: 1px solid $border-pirple-dark;
+        outline-offset: 10px;
+      }
+    }
+    &__item:focus-visible{
+      outline: 0;
+    }
+    &__item img {
+      transition: outline-color 0.3s ease;
+    }
+    &__item:focus-visible img {
+      outline: 1px solid $border-pirple;
+      outline-offset: 5px;
+    }
+    &__item:hover img {
+      outline: 1px solid $border-pirple;
+      outline-offset: 5px;
+    }
+    &__item:active img {
+      outline: 1px solid $border-pirple-dark;
+      outline-offset: 5px;
     }
     &__item:not(:last-child) {
       margin-right: 39px;
@@ -849,6 +877,12 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+  }
+  &__star {
+    @include font-16-normal;
+    line-height: 1.3;
+
+    color: $orange-primary;
   }
   &__title {
     margin-bottom: 5px;
@@ -934,7 +968,7 @@ body {
     display: inline-block;
     position: relative;
     margin-right: -30%;
-    width: 52%;
+    width: 51%;
     overflow: hidden;
     vertical-align: bottom;
     @include font-14-normal;
@@ -1367,14 +1401,27 @@ body {
     margin-bottom: 50px;
     width: 83%;
   }
-  &__wrapper {
+  &__slider {
     width: 100%;
+    border-radius: 0px 0px 10px 10px;
+    display: flex;
+    align-items: center;
+  }
+  &__wrapper {
     padding: 20px 50px;
+    width: calc(100% + 120px);
     display: flex;
     align-items: center;
     background-color: $bgc-primary;
-    border-radius: 0px 0px 10px 10px;
   }
+  &__prev,
+  &__next {
+    display: none;
+  }
+  &__item {
+    width: auto !important;
+    height: auto;
+  }  
   &__item:not(:last-child){
     margin-right: 80px;
   }

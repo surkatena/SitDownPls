@@ -1,8 +1,8 @@
 console.log('main.js');
 
-// Активация swipper на странице с карточкой товара
+// Активация swipper на странице с карточкой товара "Похожие товары"
 
-const swiperCard = new Swiper('.swiper', {
+const swiperCard = new Swiper('.other__bottom', {
   slidesPerView: 2,
   allowSlideNext: true,
   allowSlidePrev: true,  
@@ -33,8 +33,50 @@ const swiperCard = new Swiper('.swiper', {
       slidesPerView: 4,
       spaceBetween: 32,
     },  
+    1715: {
+      slidesPerView: 4,
+      spaceBetween: 32,
+    }
   }
 });
+
+// Активация swipper на странице с карточкой товара модальное окно
+
+const swiperModal = new Swiper('.swipper__modal', {
+  slidesPerView: 2,
+  allowSlideNext: true,
+  allowSlidePrev: true,  
+  loop: false,
+  spaceBetween: 80,
+  watchOverflow: true,
+  setWrapperSize: true,
+  
+  navigation: {
+    disabledClass: 'modal__preview__disabled',
+    nextEl: '.modal__preview__next',
+    prevEl: '.modal__preview__prev',
+  },
+
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 20,
+    },
+    722: {
+      slidesPerView: 1,
+      spaceBetween: 20,
+    },  
+    927: {
+      slidesPerView: 3,
+      spaceBetween: 78,
+    },  
+    1406: {
+      slidesPerView: 3,
+      spaceBetween: 78,
+    }
+  }
+});
+
 
 
 // Работа кнопки бургер меню

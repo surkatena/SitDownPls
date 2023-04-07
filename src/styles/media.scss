@@ -50,7 +50,7 @@
       }
     }
     &__middle {
-      padding-top: 28px;
+      padding-top: 30px;
     }
     &__middle .personal {
       display: none;
@@ -96,6 +96,42 @@
       width: $padding-1024;
     }
   }
+
+  .product {
+    margin-bottom: 70px;
+    grid-template-columns: minmax(514px, 1fr) 1fr;
+    &__photo {
+      &__wrapper {
+        overflow-x: hidden;
+        padding: 7px 10px;
+      }
+      &__item {
+        margin-right: 38px;
+      }
+    }
+    &__price {
+      margin-bottom: 20px;
+    }
+    &__oneclick {
+      margin-bottom: 8px;
+    }
+    &__key {
+      width: 46%;
+    }
+    &__value {
+      margin-left: 28%;
+      width: 54%;
+    }
+    &__scheme {
+      margin-bottom: -7px;
+    }
+    &__scheme__img {
+      transform: scale(0.95);
+    }
+    &__scheme__img:not(:last-child) {
+      margin-right: 15px;
+    }
+  }
   
   
   .partnership {
@@ -139,15 +175,98 @@
       grid-template-columns: 1fr 4fr;
     }
     &__nav {
-      padding-left: 28px;
+      grid-template-columns: minmax(auto, 178px) minmax(auto, 267px) minmax(auto, 249px) minmax(128px, 1fr);
     }
-    &__info {
-      &-about {
-        margin-right: 9.5%;
-      }
-      &-services {
-        margin-right: 12%;
-      }
+  }
+
+  .modal__preview {
+    &__container {
+      margin-top: 167px;
+      margin-right: 36px;
+      margin-left: 36px;
+      min-height: 588px;
+    }
+    &__main {
+      width: 86%;
+    }
+    &__slider {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+    &__wrapper {
+      padding: 20px 68px;
+    }
+    &__item  {
+      box-sizing: border-box;
+      // width: auto !important;
+      height: auto;
+    }
+    &__item:not(:last-child) {
+      margin-right: 78px;
+    }   
+    &__prev {
+      left: 0;
+      width: 60px;
+      border-radius: 0 0 0 10px;
+    }
+    &__next{
+      right: 0;
+      width: 60px;
+      border-radius: 0 0 10px 0;
+    }
+    &__prev,
+    &__next {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include btn-reset; 
+      background-color: $bgc-primary;
+      cursor: pointer;
+      &:focus-visible:not(:disabled) svg circle{
+        fill: $purple-light;
+        stroke: $purple-primary;
+      }  
+      &:focus-visible:not(:disabled) svg path{      
+        stroke: $white;
+      }  
+      &:hover:not(:disabled) svg circle{
+        fill: $purple-primary;
+        stroke: $purple-primary;
+      }  
+      &:hover:not(:disabled) svg path{      
+        stroke: $white;
+      } 
+      &:active:not(:disabled) svg circle{
+        fill: $purple-dark;
+        stroke: $purple-dark;
+      }  
+      &:active:not(:disabled) svg path{      
+        stroke: $white;
+      }    
+    }
+    &__prev svg,
+    &__next svg {
+      display: block;
+      width: 32px;
+      height: 32px;
+      transition: transform 0.3s ease;
+    }
+    &__prev svg path,
+    &__next svg circle {    
+      transition: stroke 0.3s ease, fill 0.3s ease;
+    }
+    &__prev svg {
+      transform: rotate(180deg);
+    }    
+    &__disabled svg path,
+    &__disabled svg circle {
+      stroke: $grey-secondary;
     }
   }
 
@@ -288,6 +407,68 @@
     }
   }
 
+  .breadcrumb {
+    padding-top: 12px;
+    padding-bottom: 37px;
+  }
+
+  .product {
+    margin-bottom: 31px;
+    grid-template-columns: 1fr minmax(404px, 1fr);
+    grid-template-rows: repeat(4, auto);
+    &__photo {
+      grid-column: 1/3;
+      grid-row: 1/2;
+      position: relative;
+      &__wrapper {
+        padding: 25px 30px;
+        position: absolute;
+        bottom: -137%;
+        left: 0;
+        width: 30%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+      }
+      &__item {
+        margin-right: 0;
+      }
+      &__item:not(:last-child) {
+        margin-right: 0;
+        margin-bottom: 16px;
+      }
+    }
+    &__name {
+      padding-top: 33px;
+      grid-column: 2/3;
+      grid-row: 2/3;
+    }
+    &__descr {
+      padding-top: 47px;
+      grid-column: 1/3;
+      grid-row: 3/4;
+    }
+    &__info {
+      margin-bottom: 30px;
+      &__text {
+        width: 85%;
+      }
+    }
+    &__size {
+      grid-column: 1/3;
+      grid-row: 4/5;
+    }
+    &__list {
+      padding-top: 4px;
+    }
+    &__key {
+      width: 66.5%;
+    }
+    &__value {
+      width: 34.5%;
+    }
+  }
+
   .partnership {
     &__text {
       width: 100%;
@@ -324,11 +505,11 @@
 
   .footer {
     &__grid{
-      grid-template-columns: 1fr;
-      grid-template-rows: 2;
+      grid-template-columns: auto;
+      // grid-template-rows: 2;
     }
     &__social {
-      margin-bottom: 23px;
+      margin-bottom: 21px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -338,6 +519,7 @@
     }
     &__nav {
       padding-left: 0;
+      grid-template-columns: minmax(auto, 122px) minmax(auto, 267px) minmax(auto, 249px) minmax(128px, 1fr);
     }
     &__info {
       &-about {
@@ -363,6 +545,21 @@
       margin-right: -3px;
     }
   }
+  .modal__preview {
+    &__container {
+      margin-top: 199px;
+      margin-right: 72px;
+      margin-left: 72px;
+      min-height: 494px;
+    }
+    &__main {
+      width: 93%;
+    }
+    &__slider {
+      padding-left: 11px;
+      padding-right: 11px;
+    }
+  }
 }
 
 @media (max-width: 721px) {
@@ -370,7 +567,7 @@
     padding: 0 $padding-320;
   }
   .header {
-    padding-bottom: 32px;
+    padding-bottom: 37px;
     &__top &__logo {
       padding: 12px 0;
       display: flex;
@@ -458,6 +655,132 @@
     display: none;
   }
 
+  .product {
+    margin-bottom: 67px;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(4, auto);
+    gap: 0;
+    &__photo {
+      &__item-main {
+        margin-bottom: 12px;
+      }
+      &__wrapper {
+        padding: 10px 10px;
+        width: 100%;
+        position: static;
+        flex-direction: row;
+      }
+      .product__photo__item:not(:last-child) {
+        margin-right: 38px;
+        margin-bottom: 0px;
+      }
+    }
+    &__name {
+      padding-top: 15px;
+    }
+    &__title {
+      margin-bottom: 8px;
+      @include font-16-normal;
+      line-height: 1.3;
+    }
+    &__subtitle {
+      margin-bottom: 16px;
+      width: 80%;
+    }
+    &__price {
+      margin-bottom: 16px;
+      @include font-24-normal;
+      line-height: 1.3;
+    }
+    &__oneclick {
+      width: 100%;
+    }
+    &__add {
+      width: 100%;
+    }
+    &__descr {
+      padding-top: 26px;
+    }
+    &__info__text {
+      width: 98%;
+    }
+    &__scheme {
+      margin-bottom: 0;
+      display: flex;
+      align-items: center;
+      &__img {
+        width: 47.5%;
+        transform: none;
+      }
+    }
+    &__size {
+      padding-top: 30px;
+    }
+    &__key {
+      margin-bottom: -2px;
+      width: 100%;
+      display: block;
+      @include font-14-normal;
+      font-size: 10px;
+      line-height: 1.4;
+      &::after {
+        content: none;
+      }
+    }
+    &__value {
+      margin-left: 0;
+      width: 100%;
+      display: block;
+    }
+    &__list li:not(:last-child) {
+      margin-bottom: 4px;
+    }
+  }
+
+  .other {
+    margin-bottom: 118px;
+    position: relative;
+    &__nav {
+      position: absolute;
+      bottom: -51px;
+      left: calc(50% - 37px);
+      z-index: 3;
+    }
+  }
+
+  .item {
+    max-width: 140px;
+    min-height: 278px;
+    padding: 16px;
+    &__star {
+      font-size: 12px;    
+    }
+    &__star svg {
+      margin-right: 3px;
+      width: 13px;
+      height: 14px;
+    }
+    &__img {
+      max-width: 100%;
+      width: 102%;
+      margin: 0;
+      margin-bottom: 11px;
+      align-self: auto;
+    }
+    &__name {
+      margin-bottom: 19px;
+      width: 80%;
+      @include font-16-normal;
+      line-height: 1.3;
+    }
+    &__price {
+      margin-bottom: 15px;
+    }
+    &__btn {
+      padding: 9px 25px;
+    }
+  }
+
   .partnership{
     &__title {
       margin-bottom: 11px;
@@ -525,6 +848,9 @@
   }
 
   .footer {
+    &__grid {
+      grid-template-columns: minmax(295px, auto);
+    }
     &__social {
       flex-direction: column;
     }
@@ -538,6 +864,85 @@
     }
       &__info {
     margin-right: 0;
+    }
+  }
+
+  .modal__close {
+    top: 9px;
+    right: 10px;
+  }
+  .modal__close svg{
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+  }
+
+  .modal__buy {
+    &__container {
+      margin-right: 22px;
+      margin-left: 22px;
+      padding: 31px 16px;
+    }
+    &__h3 {
+      @include font-24-normal;
+      line-height: 1;
+    }
+    &__descr {
+      width: 100%;
+      margin-bottom: 14px;
+    }
+    &__input {
+      margin-bottom: 14px;
+    }
+    &__submit {
+      padding: 18px 36px;
+    }
+    &__agreement {
+      font-size: 11px;
+      &::before {
+        margin-right: 5px;
+      }
+    }
+  }
+
+  .modal__thanks {
+    &__container {     
+      margin-right: 22px;
+      margin-left: 22px;
+      min-height: 217px;
+      padding: 61px 70px;
+    }
+    &__logo {
+      margin-bottom: 14px;
+      margin-right: 20px;
+      width: 79px;
+      height: 50px;
+    }
+    &__text {
+      @include font-16-normal;
+      text-align: center;
+    }
+  }
+
+  .modal__preview {
+    &__container {
+      width: 90%;
+      margin-top: 340px;
+      margin-right: 16px;
+      margin-left: 12px;
+      padding-top: 31px;
+      min-height: 286px;
+    }
+    &__main {
+      margin-bottom: 33px;
+      width: 89%;
+    }
+    &__wrapper {
+      padding: 15px 50px;
+      height: 90px;
+    }
+    &__item {
+      // width: 53%!important;
     }
   }
 }
