@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SitDownPls - Каталог</title>
+  <link rel="shortcut icon" href="../images/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../lib/nouislider.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="../css/style.css">  
+</head>
+<body>
+  <header class="header"></header>
+
+  <main class="main catalog">
+    <div class="container">
+      <div class="breadcrumb">
+        <div class="breadcrumb__line">
+          <a href="../index.html" class="breadcrumb__item">Главная</a>
+          <span class="breadcrumb__slash">/</span>
+          <a href="./catalog.html" class="breadcrumb__item">Каталог</a>
+          <span class="breadcrumb__slash">/</span>
+          <a href="./catalog.html" class="breadcrumb__item">Диваны</a>
+          <span class="breadcrumb__slash">/</span>
+          <a href="./partnership.html" class="breadcrumb__item breadcrumb__active">Прямые диваны</a>
+        </div>
+      </div> 
+      <div class="catalog__grid">
+        <section class="catalog__filter filter">
+          <form class="filter__form" action="#" method="get">
+            <h2 class="filter__h2">Фильтровать&nbsp;по:</h2>
+
+            <fieldset class="filter__category filter__fieldset">
+              <h3 class="filter__h3">Категория</h3>
+              <div class="filter__input__wrapper">                
+                <input class="filter__checkbox visually-hidden" id="category__sofa" type="checkbox" checked>
+                <label class="filter__item" for="category__sofa">Диваны</label>
+              </div>
+              <div class="filter__input__wrapper">                
+                <input class="filter__checkbox visually-hidden" id="category__armchair" type="checkbox">
+                <label class="filter__item" for="category__armchair">Кресла</label>
+              </div>
+              <div class="filter__input__wrapper">                
+                <input class="filter__checkbox visually-hidden" id="category__poof" type="checkbox">
+                <label class="filter__item" for="category__poof">Пуфы</label>
+              </div>
+              <div class="filter__input__wrapper">                
+                <input class="filter__checkbox visually-hidden" id="category__bed" type="checkbox">
+                <label class="filter__item" for="category__bed">Кровати</label>
+              </div>
+              <div class="filter__input__wrapper">                
+                <input class="filter__checkbox visually-hidden" id="category__pedestal" type="checkbox">
+                <label class="filter__item" for="category__pedestal">Тумбы</label>
+              </div>
+              <div class="filter__input__wrapper">                
+                <input class="filter__checkbox visually-hidden" id="category__chest" type="checkbox">
+                <label class="filter__item" for="category__chest">Комоды</label>
+              </div>
+              <div class="filter__input__wrapper">                
+                <input class="filter__checkbox visually-hidden" id="category__chair" type="checkbox">
+                <label class="filter__item" for="category__chair">Стулья</label>
+              </div>
+              <div class="filter__input__wrapper">                
+                <input class="filter__checkbox visually-hidden" id="category__table" type="checkbox">
+                <label class="filter__item" for="category__table">Столы</label>
+              </div>
+              <div class="filter__input__wrapper">                
+                <input class="filter__checkbox visually-hidden" id="category__accessories" type="checkbox">
+                <label class="filter__item" for="category__accessories">Аксессуары</label>
+              </div>
+            </fieldset>
+            <fieldset class="filter__price filter__fieldset">
+              <h3 class="filter__h3">Цена</h3>
+              <div class="filter__price__wrapper">
+                <label class="filter__price__label">
+                  <span class="filter__price__span">от</span>
+                  <input class="filter__price__input" type="number" min="500" max="999999" class="filter__price__limit" id="input-min">
+                </label>
+                <label class="filter__price__label">
+                  <span class="filter__price__span">до</span>
+                  <input class="filter__price__input" type="number" min="500" max="999999" class="filter__price__limit" id="input-max">
+                </label>
+              </div>
+              <div id="progressbar"></div>
+            </fieldset>
+            <fieldset class="filter__sale filter__fieldset">
+              <h3 class="filter__h3">Скидка</h3>
+              <div class="filter__input__wrapper">                
+                <input class="filter__checkbox visually-hidden" id="sale__more5000" type="checkbox">
+                <label class="filter__item" for="sale__more5000">Более 5&nbsp;000</label>
+              </div>
+              <div class="filter__input__wrapper">                
+                <input class="filter__checkbox visually-hidden" id="sale__less5000" type="checkbox">
+                <label class="filter__item" for="sale__less5000">Более 5&nbsp;000</label>
+              </div>
+              <div class="filter__input__wrapper">                
+                <input class="filter__checkbox visually-hidden" id="sale__not_important" type="checkbox" checked>
+                <label class="filter__item" for="sale__not_important">Не&nbsp;важно</label>
+              </div>
+            </fieldset>
+            <fieldset class="filter__color filter__fieldset">
+              <h3 class="filter__h3">Цвет</h3>
+              <div class="filter__input__wrapper">                
+                <input class="filter__checkbox visually-hidden" id="color-brown" type="checkbox">
+                <label class="filter__item" for="color-brown">Коричневый</label>
+              </div>
+              <div class="filter__input__wrapper">                
+                <input class="filter__checkbox visually-hidden" id="color-black" type="checkbox">
+                <label class="filter__item" for="color-black">Черный</label>
+              </div>
+              <div class="filter__input__wrapper">                
+                <input class="filter__checkbox visually-hidden" id="color-beige" type="checkbox">
+                <label class="filter__item" for="color-beige">Бежевый</label>
+              </div>
+              <div class="filter__input__wrapper">                
+                <input class="filter__checkbox visually-hidden" id="color-grey" type="checkbox">
+                <label class="filter__item" for="color-grey">Серый</label>
+              </div>
+              <div class="filter__input__wrapper">                
+                <input class="filter__checkbox visually-hidden" id="color-white" type="checkbox">
+                <label class="filter__item" for="color-white">Белый</label>
+              </div>
+              <div class="filter__input__wrapper">                
+                <input class="filter__checkbox visually-hidden" id="color-blue" type="checkbox">
+                <label class="filter__item" for="color-blue">Синий</label>
+              </div>
+              <div class="filter__input__wrapper">                
+                <input class="filter__checkbox visually-hidden" id="color-orange" type="checkbox">
+                <label class="filter__item" for="color-orange">Оранжевый</label>
+              </div>
+              <div class="filter__input__wrapper">                
+                <input class="filter__checkbox visually-hidden" id="color-yellow" type="checkbox">
+                <label class="filter__item" for="color-yellow">Желтый</label>
+              </div>
+              <div class="filter__input__wrapper">                
+                <input class="filter__checkbox visually-hidden" id="color-green" type="checkbox">
+                <label class="filter__item" for="color-green">Зеленый</label>
+              </div>
+
+            </fieldset>
+
+          </form>
+          <div class="catalog__banner">
+            <div class="catalog__banner__wrapper">
+              <img src="./images/banner__img.jpg" alt="Фото баннера" class="catalog__banner__img">
+              <div class="catalog__banner__info">
+                <h3 class="catalog__banner__title">Оксфорд 1950</h3>
+                <p class="catalog__banner__descr">Новая коллекция изысканных кресел</p>
+                <a href="catalog.html" class="catalog__banner__btn">
+                  <span class="catalog__banner__btn__text">
+                    В каталог
+                  </span>                  
+                  
+                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g clip-path="url(#clip0_51627_670)">
+                      <path d="M9.625 7.5625L13.0625 11L9.625 14.4375" stroke="#A65CF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      <circle cx="11" cy="11" r="10" stroke="#A65CF0" stroke-width="2"/>
+                      </g>         
+                    </svg>                  
+                  
+                  </a>
+              </div>
+            </div>
+          </div>
+        </section>  
+        <section class="catalog__items">
+          <h1 class="catalog__title">Каталог</h1>
+          <div class="swiper catalog__slider">
+            <div class="catalog__wrapper swiper-wrapper">
+              <article class="catalog__item item swiper-slide">
+                <span class="catalog__star item__star star item__container">
+                  <svg>
+                    <use xlink:href="../images/sprite.svg#star"></use>
+                  </svg> 
+                  5,0
+                </span>
+                <div class="item__wrapper">
+                  <img src="./images/item__R94.png" alt="Фото дивана R94" class="other__img item__img">
+                  <h2 class="catalog__name item__name">
+                    Диван кожанный &ldquo;R-94&rdquo;
+                  </h2>
+                  <p class="catalog__price item__price">
+                    94&nbsp;990 руб
+                  </p>
+                  <a href="card.html" class="catalog__buy item__btn">Купить</a>
+              </div> 
+              </article>
+              <article class="catalog__item item swiper-slide">
+                <span class="catalog__star item__star star">
+                  <svg>
+                    <use xlink:href="../images/sprite.svg#star"></use>
+                  </svg> 
+                  4,8
+                </span>
+                <div class="item__wrapper">
+                  <img src="./images/item__Y68.png" alt="Фото дивана Y68" class="other__img item__img">
+                  <h2 class="catalog__name item__name">
+                    Диван велюровый &ldquo;Y-67&rdquo;
+                  </h2>
+                  <p class="catalog__price item__price">
+                    22&nbsp;990 руб
+                  </p>
+                  <a href="card.html" class="catalog__buy item__btn">Купить</a>
+                </div>
+              </article>
+              <article class="catalog__item item swiper-slide">
+                <span class="catalog__star item__star star">
+                  <svg>
+                    <use xlink:href="../images/sprite.svg#star"></use>
+                  </svg> 
+                  4,8
+                </span>
+                <div class="item__wrapper">
+                  <img src="./images/item__V43.png" alt="Фото дивана V43" class="other__img item__img">
+                  <h2 class="catalog__name item__name">
+                    Диван шиниловый &ldquo;V-43&rdquo;
+                  </h2>
+                  <p class="catalog__price item__price">
+                    19&nbsp;990 руб
+                  </p>
+                  <a href="card.html" class="catalog__buy item__btn">Купить</a>
+                </div>
+              </article>
+
+              <article class="catalog__item item swiper-slide">
+                <span class="catalog__star item__star star">
+                  <svg>
+                    <use xlink:href="../images/sprite.svg#star"></use>
+                  </svg> 
+                  4,9
+                </span>
+                <div class="item__wrapper">
+                  <img src="./images/item__T75.png" alt="Фото дивана T75" class="other__img item__img">
+                  <h2 class="catalog__name item__name">
+                    Диван апартековый &ldquo;T-75&rdquo;
+                  </h2>
+                  <p class="catalog__price item__price">
+                    69&nbsp;990 руб
+                  </p>
+                  <a href="card.html" class="catalog__buy item__btn">Купить</a>
+                </div>
+              </article>
+              <article class="catalog__item item swiper-slide">
+                <span class="catalog__star item__star star">
+                  <svg>
+                    <use xlink:href="../images/sprite.svg#star"></use>
+                  </svg> 
+                  4,8
+                </span>
+                <div class="item__wrapper">
+                  <img src="./images/item__W95.png" alt="Фото дивана W95" class="other__img item__img">
+                  <h2 class="catalog__name item__name">
+                    Диван из шинила &ldquo;W-95&rdquo;
+                  </h2>
+                  <p class="catalog__price item__price">
+                    22&nbsp;990 руб
+                  </p>
+                  <a href="card.html" class="catalog__buy item__btn">Купить</a>
+                </div>
+              </article>
+              <article class="catalog__item item swiper-slide">
+                <span class="catalog__star item__star star">
+                  <svg>
+                    <use xlink:href="../images/sprite.svg#star"></use>
+                  </svg> 
+                  4,7
+                </span>
+                <div class="item__wrapper">
+                  <img src="./images/item__S99.png" alt="Фото дивана S99" class="other__img item__img">
+                  <h2 class="catalog__name item__name">
+                    Диван велюровый &ldquo;S-99&rdquo;
+                  </h2>
+                  <p class="catalog__price item__price">
+                    19&nbsp;990 руб
+                  </p>
+                  <a href="card.html" class="catalog__buy item__btn">Купить</a>
+                </div>
+              </article>
+
+              <article class="catalog__item item swiper-slide">
+                <span class="catalog__star item__star star">
+                  <svg>
+                    <use xlink:href="../images/sprite.svg#star"></use>
+                  </svg> 
+                  4,8
+                </span>
+                <div class="item__wrapper">
+                  <img src="./images/item__D31.png" alt="Фото дивана D31" class="other__img item__img">
+                  <h2 class="catalog__name item__name">
+                    Диван тканевый &ldquo;D-31&rdquo;
+                  </h2>
+                  <p class="catalog__price item__price">28&nbsp;490 руб</p>
+                  <a href="card.html" class="catalog__buy item__btn">Купить</a>
+                </div>
+              </article>
+              <article class="catalog__item item swiper-slide">
+                <span class="catalog__star item__star star">
+                  <svg>
+                    <use xlink:href="../images/sprite.svg#star"></use>
+                  </svg> 
+                  4,8
+                </span>
+                <div class="item__wrapper">
+                  <img src="./images/item__G41.png" alt="Фото дивана G41" class="other__img item__img">
+                  <h2 class="catalog__name item__name">
+                    Диван флоковый &ldquo;G-41&rdquo;
+                  </h2>
+                  <p class="catalog__price item__price">
+                    17&nbsp;990 руб
+                  </p>
+                  <a href="card.html" class="catalog__buy item__btn">Купить</a>
+                </div>
+              </article>
+              <article class="catalog__item item swiper-slide">
+                <span class="catalog__star item__star star">
+                  <svg>
+                    <use xlink:href="../images/sprite.svg#star"></use>
+                  </svg> 
+                  4,7
+                </span>
+                <div class="item__wrapper">
+                  <img src="./images/item__F85.png" alt="Фото дивана F85" class="other__img item__img">
+                  <h2 class="catalog__name item__name">
+                    Диван из кожзама &ldquo;F-85&rdquo;
+                  </h2>
+                  <p class="catalog__price item__price">
+                    26&nbsp;990 руб
+                  </p>
+                  <a href="card.html" class="catalog__buy item__btn">Купить</a>
+                </div>
+              </article>
+  
+              <article class="catalog__item item swiper-slide">      
+                <span class="catalog__star item__star star item__container">
+                  <svg>
+                    <use xlink:href="../images/sprite.svg#star"></use>
+                  </svg> 
+                  4,6
+                </span>
+                <div class="item__wrapper">
+                  <img src="./images/item__H64.png" alt="Фото дивана H64" class="other__img item__img">
+                  <h2 class="catalog__name item__name">
+                    Диван флоковый &ldquo;H-64&rdquo;
+                  </h2>
+                  <p class="catalog__price item__price">
+                    23&nbsp;990 руб
+                  </p>
+                  <a href="card.html" class="catalog__buy item__btn">Купить</a>
+                </div>
+              </article>
+              <article class="catalog__item item swiper-slide">
+                <span class="catalog__star item__star star">
+                  <svg>
+                    <use xlink:href="../images/sprite.svg#star"></use>
+                  </svg> 
+                  4,6
+                </span>
+                <div class="item__wrapper">
+                  <img src="./images/item__C42.png" alt="Фото дивана C42" class="other__img item__img">
+                  <h2 class="catalog__name item__name">
+                    Диван из шинила &ldquo;C-42&rdquo;
+                  </h2>
+                  <p class="catalog__price item__price">
+                    18&nbsp;990 руб
+                  </p>
+                  <a href="card.html" class="catalog__buy item__btn">Купить</a>
+                </div>
+              </article>
+              <article class="catalog__item item swiper-slide">
+                <span class="catalog__star item__star star">
+                  <svg>
+                    <use xlink:href="../images/sprite.svg#star"></use>
+                  </svg> 
+                  4,5
+                </span>
+                <div class="item__wrapper">
+                  <img src="./images/item__R85.png" alt="Фото дивана R85" class="other__img item__img">
+                  <h2 class="catalog__name item__name">
+                    Диван велюровый &ldquo;R-85&rdquo;
+                  </h2>
+                  <p class="catalog__price item__price">
+                    34&nbsp;990 руб
+                  </p>
+                  <a href="card.html" class="catalog__buy item__btn">Купить</a>
+                </div>
+              </article>
+
+              <article class="catalog__item item swiper-slide">
+                <span class="catalog__star item__star star">
+                  <svg>
+                    <use xlink:href="../images/sprite.svg#star"></use>
+                  </svg> 
+                  4,6
+                </span>
+                <div class="item__wrapper">
+                  <img src="./images/item__H58.png" alt="Фото дивана H58" class="other__img item__img">
+                  <h2 class="catalog__name item__name">
+                    Диван флоковый &ldquo;H-58&rdquo;
+                  </h2>
+                  <p class="catalog__price item__price">
+                    23&nbsp;990 руб
+                  </p>
+                  <a href="card.html" class="catalog__buy item__btn">Купить</a>
+                </div>
+              </article>                          
+              <article class="catalog__item item swiper-slide">
+                <span class="catalog__star item__star star">
+                  <svg>
+                    <use xlink:href="../images/sprite.svg#star"></use>
+                  </svg> 
+                  4,6
+                </span>
+                <div class="item__wrapper">
+                  <img src="./images/item__U58.png" alt="Фото дивана U58" class="other__img item__img">
+                  <h2 class="catalog__name item__name">
+                    Диван велюровый &ldquo;U-58&rdquo;
+                  </h2>
+                  <p class="catalog__price item__price">
+                    21&nbsp;990 руб
+                  </p>
+                  <a href="card.html" class="catalog__buy item__btn">Купить</a>
+                </div>
+              </article>
+              <article class="catalog__item item swiper-slide">
+                <span class="catalog__star item__star star">
+                  <svg>
+                    <use xlink:href="../images/sprite.svg#star"></use>
+                  </svg> 
+                  4,5
+                </span>
+                <div class="item__wrapper">
+                  <img src="./images/item__S44.png" alt="Фото дивана S44" class="other__img item__img">
+                  <h2 class="catalog__name item__name">
+                    Диван велюровый &ldquo;S-44&rdquo;
+                  </h2>
+                  <p class="catalog__price item__price">
+                    19&nbsp;990 руб
+                  </p>
+                  <a href="card.html" class="catalog__buy item__btn">Купить</a>
+                </div>
+              </article> 
+
+              <article class="catalog__item item swiper-slide">
+                <span class="catalog__star item__star star">
+                  <svg>
+                    <use xlink:href="../images/sprite.svg#star"></use>
+                  </svg> 
+                  4,6
+                </span>
+                <div class="item__wrapper">
+                  <img src="./images/item__R43.png" alt="Фото дивана R43" class="other__img item__img">
+                  <h2 class="catalog__name item__name">
+                    Диван из кожзама &ldquo;R-43&rdquo;
+                  </h2>
+                  <p class="catalog__price item__price">33&nbsp;990 руб</p>
+                  <a href="card.html" class="catalog__buy item__btn">Купить</a>
+                </div>
+              </article>
+              <article class="catalog__item item swiper-slide">
+                <span class="catalog__star item__star star">
+                  <svg>
+                    <use xlink:href="../images/sprite.svg#star"></use>
+                  </svg> 
+                  4,5
+                </span>
+                <div class="item__wrapper">
+                  <img src="./images/item__F41.png" alt="Фото дивана F41" class="other__img item__img">
+                  <h2 class="catalog__name item__name">
+                    Диван флоковый &ldquo;F-41&rdquo;
+                  </h2>
+                  <p class="catalog__price item__price">
+                    17&nbsp;990 руб
+                  </p>
+                  <a href="card.html" class="catalog__buy item__btn">Купить</a>
+                </div>
+              </article>
+              <article class="catalog__item item swiper-slide">
+                <span class="catalog__star item__star star">
+                  <svg>
+                    <use xlink:href="../images/sprite.svg#star"></use>
+                  </svg> 
+                  4,4
+                </span>
+                <div class="item__wrapper">
+                  <img src="./images/item__C80.png" alt="Фото дивана C58" class="other__img item__img">
+                  <h2 class="catalog__name item__name">
+                    Диван из шинила &ldquo;C-80&rdquo;
+                  </h2>
+                  <p class="catalog__price item__price">
+                    20&nbsp;990 руб
+                  </p>
+                  <a href="card.html" class="catalog__buy item__btn">Купить</a>
+                </div>
+              </article>              
+              
+            </div>
+          </div>
+          <div class="catalog__btn swiper-pagination">
+          </div>
+        </section>
+      </div>     
+
+    </div>
+  </main>
+
+  <footer class="footer"></footer>
+
+  <script src="../lib/header.js" defer></script>
+  <script src="../lib/footer.js" defer></script>
+  <script src="../lib/nouislider.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script src="../js/app.js" defer></script>
+
+</body>
+</html>
