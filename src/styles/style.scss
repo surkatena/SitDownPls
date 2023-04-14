@@ -818,6 +818,569 @@ input[type=number] {
   height: 15px;
 }
 
+
+
+// Главная страница
+
+.index {
+  &__section__title {    
+    @include font-32-normal;
+    line-height: 1;
+
+    color: $grey-primary;    
+  }
+  &__hero {
+    padding-top: 20px;
+    margin-bottom: 70px;
+    width: 100%;
+    &__slide {
+      padding: 80px $padding;
+      min-height: 400px;
+      box-sizing: border-box;      
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      &-01 {
+        background-image: url(../images/hero__img__01.jpg);
+      }
+      &-02 {
+        background-image: url(../images/hero__img__02.jpg);
+      }
+      &-03 {
+        background-image: url(../images/hero__img__03.jpg);
+      }
+
+    }
+    &__title {
+      margin-bottom: 50px;      
+      width: 50%;
+      font-family: 'Open Sans', Verdana, Arial, sans-serif;
+      font-weight: 700;
+      font-style: normal;
+      font-size: 48px;
+      letter-spacing: -3px;
+      line-height: 1.35;
+
+      color: $grey-secondary;
+      &-white {
+        color: $white;
+      }
+    }
+    &__btn {
+      padding: 22px 46px;
+      background-color: $purple-primary;
+      border: 1px solid $purple-primary;
+      border-radius: 10px;
+      @include font-16-normal;
+      font-weight: 700;
+      line-height: 1;
+
+      color: $white;
+      &:focus-visible {
+        outline: 0;
+
+      }
+    }
+    .swiper-pagination {
+      bottom: var(--swiper-pagination-bottom,19px);
+    }
+    .swiper-pagination-bullet {
+      width: 14px;
+      height: 14px;
+      background-color: $bgc-grey-dark;
+      opacity: 0.3;
+      margin: 0 var(--swiper-pagination-bullet-horizontal-gap,8px)!important;
+      &-active {
+        opacity: 1;
+      }
+    }
+  }
+  &__special {
+    padding-bottom: 35px;
+    &__top {
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }   
+    &__pred,
+    &__next {
+      @include btn-reset; 
+      cursor: pointer;
+      &:focus-visible:not(:disabled) svg circle{
+        fill: $purple-light;
+        stroke: $purple-primary;
+      }  
+      &:focus-visible:not(:disabled) svg path{      
+        stroke: $white;
+      }  
+      &:hover:not(:disabled) svg circle{
+        fill: $purple-primary;
+        stroke: $purple-primary;
+      }  
+      &:hover:not(:disabled) svg path{      
+        stroke: $white;
+      } 
+      &:active:not(:disabled) svg circle{
+        fill: $purple-dark;
+        stroke: $purple-dark;
+      }  
+      &:active:not(:disabled) svg path{      
+        stroke: $white;
+      }    
+    }
+    &__pred svg,
+    &__next svg {
+      display: block;
+      width: 32px;
+      height: 32px;
+      transition: transform 0.3s ease;
+    }
+    &__pred svg path,
+    &__next svg circle {    
+      transition: stroke 0.3s ease, fill 0.3s ease;
+    }
+    &__pred svg {
+      transform: rotate(180deg);
+    }
+    &__pred {
+      margin-right: 7px;
+    }
+    
+    &__disabled svg path,
+    &__disabled svg circle {
+      stroke: $grey-secondary;
+    }
+  }
+  &__rating {
+    padding-top: 35px;
+    padding-bottom: 35px;
+    &__title {
+      margin-bottom: 26px;
+    }
+    &__grid {
+      margin-bottom: 32px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: $gap;
+    }
+    &__btn {
+      @include btn-reset;
+      padding: 21px 26.5px;
+      margin: 0 auto;
+      display: block;
+      background-color: $purple-primary;
+      border:  1px solid  $purple-primary;
+      border-radius: 10px;
+      @include font-16-normal;
+      font-weight: 700;
+      line-height: 1;
+
+      color: $white;
+      transition: border-color 0.3s ease, background-color 0.3s ease;
+      &:focus-visible {
+        outline: 0;
+        border-color: $purple-dark;
+        background-color: $purple-light;
+      }
+      &:hover {
+        border-color:$purple-light;
+        background-color: $purple-light;
+      }
+      &:active {
+        border-color: $purple-dark;
+        background-color: $purple-dark;
+      }
+    }
+  }
+  &__banner {
+    padding-top: 35px;
+    margin-bottom: 67px;
+    position: relative;
+    &__img {
+      width: 100%;
+      min-height: 600px;
+    }
+    &__info {
+      position: absolute;
+      left: $padding;
+      top: calc(50% - 190px / 2 - 30px);
+
+    }
+    &__title {
+      margin-bottom: 5px;
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-style: normal;
+      font-size: 60px;
+      line-height: 1; 
+
+      color: $gold;
+    }
+    &__descr {
+      margin-bottom: 50px;
+      width: 60%;
+      font-family: 'Open Sans', Verdana, Arial, sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 48px; 
+      line-height: 1.2;
+      
+      color: $white;
+    }
+    &__btn {
+      @include btn-reset;
+      padding: 21px 26.5px;
+      // margin: 0 auto;
+      // display: block;
+      background-color: $purple-primary;
+      border:  1px solid  $purple-primary;
+      border-radius: 10px;
+      @include font-16-normal;
+      font-weight: 700;
+      line-height: 1;
+
+      color: $white;
+      transition: border-color 0.3s ease, background-color 0.3s ease;
+      &:focus-visible {
+        outline: 0;
+        border-color: $purple-dark;
+        background-color: $purple-light;
+      }
+      &:hover {
+        border-color:$purple-light;
+        background-color: $purple-light;
+      }
+      &:active {
+        border-color: $purple-dark;
+        background-color: $purple-dark;
+      }
+    }
+  }
+  &__top {
+    padding-bottom: 35px;
+    &__title {
+      margin-bottom: 26px;
+    }
+    &__wrapper {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: repeat(2, auto);
+      gap: $gap;
+    }
+  }
+  &__usefull {
+    padding-top: 35px;
+    padding-bottom: 35px;
+    &__top {
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }   
+    &__pred,
+    &__next {
+      @include btn-reset; 
+      cursor: pointer;
+      &:focus-visible:not(:disabled) svg circle{
+        fill: $purple-light;
+        stroke: $purple-primary;
+      }  
+      &:focus-visible:not(:disabled) svg path{      
+        stroke: $white;
+      }  
+      &:hover:not(:disabled) svg circle{
+        fill: $purple-primary;
+        stroke: $purple-primary;
+      }  
+      &:hover:not(:disabled) svg path{      
+        stroke: $white;
+      } 
+      &:active:not(:disabled) svg circle{
+        fill: $purple-dark;
+        stroke: $purple-dark;
+      }  
+      &:active:not(:disabled) svg path{      
+        stroke: $white;
+      }    
+    }
+    &__pred svg,
+    &__next svg {
+      display: block;
+      width: 32px;
+      height: 32px;
+      transition: transform 0.3s ease;
+    }
+    &__pred svg path,
+    &__next svg circle {    
+      transition: stroke 0.3s ease, fill 0.3s ease;
+    }
+    &__pred svg {
+      transform: rotate(180deg);
+    }
+    &__pred {
+      margin-right: 7px;
+    }
+    &__disabled svg path,
+    &__disabled svg circle {
+      stroke: $grey-secondary;
+    }
+  }
+  &__feedback {
+    padding-top: 35px;
+    padding-bottom: 70px;
+    width: 66%;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 17.5%;
+      right: -26.5%;
+      width: 624px;
+      height: 383px;
+      background-image: url(../images/sprite.svg#feedback__img);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      z-index: 3;
+    }
+    &__title {
+      margin-bottom: 12px;
+    }
+    &__descr {
+      margin-bottom: 15px;
+      @include font-14-normal;
+      line-height: 1.3;
+
+      color: $grey-secondary;
+    }
+    &__form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    &__input {
+      width: 100%;
+      margin-bottom: 29px;
+      @include input;
+    }
+    &__input::placeholder {
+      @include font-16-normal;
+      line-height: 2.5;
+  
+      color: $grey-secondary;
+    }
+    &__label {
+      width: 100%;
+      position: relative;
+    }
+    &__submit {
+      @include btn-reset;
+      @include btn__fill;
+      padding: 17px 35px;
+      margin-bottom: 13px;
+      align-self: flex-start;
+    }
+    &__inner {
+      width: 100%;    
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;   
+    }
+    &__checkbox {
+      display: none;
+      @include font-14-normal;
+      line-height: 1.3;
+  
+      color: $grey-primary;
+    }
+    &__agreement {
+      width: 100%;
+      position: relative; 
+      display: flex;
+      align-items: center;
+      @include font-14-normal;
+      line-height: 1.3;
+  
+      color: $grey-primary;
+      &::before {
+        content: "";
+        margin-right: 10px;
+        width: 15px;
+        height: 15px;
+        background-color: $white;
+      
+        border: 2px solid $border-grey;
+        border-radius: 2px;
+        transition: background-color 0.3s ease;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        top: 3.5px;
+        left: 3px;
+        width: 10px;
+        height: 10px;
+        background-image: url(../images/sprite.svg#checkbox);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+    }
+    &__agreement-error::before {
+      border-color: $red;
+    }
+    &__checkbox:checked + &__agreement::before {
+      background-color: $purple-primary;
+      border-color:$purple-primary;
+    }
+    &__checkbox:checked + &__agreement::after {
+      opacity: 1;
+    }
+    &__link {
+      text-decoration: underline;
+      color: $purple-primary;
+    }
+  }
+}
+
+.top-category {
+  padding: 28px 30px;
+  background-color: $bgc-primary;
+  border-radius: 10px;
+  &__list {
+    margin-bottom: 14px; 
+    @include ul-reset; 
+    display: flex;      
+  }
+  &__list li:not(:last-child) {
+    margin-right: 30px;
+  }
+  &__link {
+    @include font-14-normal;
+    line-height: 1;
+
+    color: $grey-secondary;
+
+    &:focus-visible {
+      outline: 1px solid #999999;
+      outline-offset: 3px;
+    }
+    &:hover {
+      color: #333333;
+    }
+    &:active {
+      color: #A65CF0;
+    }
+  }
+  &__title {
+    margin-bottom: 30px;
+    @include font-24-normal;
+    line-height: 1.3;
+
+    color: $grey-primary;
+  }
+  & img {
+    margin-bottom: 27px;
+    margin-left: -30px;
+  }
+  &-sofa {
+    grid-column: 1/4;
+    grid-row: 1/2;
+  }
+  &-armchair {
+    grid-column: 4/7;
+    grid-row: 1/2;
+  }
+  &-bed {
+    grid-column: 1/3;
+    grid-row: 2/3;
+  }
+  &-chest {
+    grid-column: 3/5;
+    grid-row: 2/3;
+  }
+  &-chair {
+    grid-column: 5/7;
+    grid-row: 2/3;
+  }
+}
+
+.usefull__article {
+  padding: 30px;
+  width: 624px;
+  min-height: 676px;
+  position: relative;
+  border-radius: 10px;
+  background-color: $bgc-primary;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;        
+    height:  427px;    
+    border-radius: 10px 10px 0px 0px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  &-01::before {
+    background-image: url(../images/useful__img__01.jpg);
+  }
+  &-02::before {
+    background-image: url(../images/useful__img__02.jpg);
+  }
+  &-03::before {
+    background-image: url(../images/useful__img__03.jpg);
+  }
+  &-04::before {
+    background-image: url(../images/useful__img__04.jpg);
+  }
+  &-05::before {
+    background-image: url(../images/useful__img__05.jpg);
+  }
+  &__descr {
+    margin-bottom: 38px;
+    padding-top: 426px;
+    @include font-24-normal;
+    line-height: 1.4;
+
+    color: $grey-primary;
+  }
+  &__btn {
+    @include btn-reset;
+    padding: 15px 35px;
+    border: 1px solid $purple-primary;
+    border-radius: 10px;
+
+    color: $purple-primary;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    &:focus-visible {
+      background-color: $purple-light;
+      border-color: $purple-primary;
+      color: $white;
+    }
+    &:hover {
+      background-color: $purple-primary;
+      color: $white;
+    }
+    &:active {
+      border-color: $purple-dark;
+      background-color: $purple-dark;
+      color: $white;
+    }
+  }
+}
+
+
 // Страница "Карточка товара"
 .product {
   margin-top: -5px;
@@ -920,11 +1483,6 @@ input[type=number] {
     @include btn-reset;
     margin-bottom: 11px;
     @include btn__fill;
-    // padding: 17px 39px;
-    // border-radius: 10px;
-    // background-color: $purple-primary;
-
-    // color: $white;
   }
   &__add {
     cursor: pointer;
@@ -1075,19 +1633,37 @@ input[type=number] {
 }
 
 .item {
-  max-width: 296px;
   padding: 32px 30px;
+  max-width: 296px;
   min-height: 420px;
   height: auto;
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
+  // position: relative;
   box-sizing: border-box;
   background-color: $bgc-primary;
   border-radius: 10px;
+  width: 296px!important;
+  &-long {
+    padding: 32px 30px;
+    max-width: 624px;
+    min-height: 420px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    align-items: flex-start;
+    justify-content: space-between;
+    box-sizing: border-box;
+    background-color: $bgc-primary;
+    border-radius: 10px;
+    width: 624px!important;
+  }
   &__star {
+    align-self: flex-start;
     @include font-16-normal;
     line-height: 1.3;
 
@@ -1098,6 +1674,60 @@ input[type=number] {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+    min-width: 235px;
+  }
+  &__label {
+    width: 84px;
+    // margin-bottom: 10px;
+    padding: 8px 17px;
+    position: relative;
+    top: 1px;
+    left: -109px;
+    background-color: $bgc-orange;
+    text-align: center;
+    @include font-14-normal;
+    font-weight: 700;
+    line-height: 1.3;
+
+    color: $white;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: -9px;
+      width: 0;
+      height: 0;
+      background-color: transparent;
+      border-style: solid;
+      border-width: 17px 0 17px 10px;
+      border-color: transparent transparent transparent $bgc-orange;      
+    }
+    &-long {
+      width: 84px;
+      padding: 8px 17px;
+      position: relative;
+      top: 1px;
+      left: -30px;
+      background-color: $bgc-orange;
+      text-align: center;
+      @include font-14-normal;
+      font-weight: 700;
+      line-height: 1.3;
+  
+      color: $white;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: -9px;
+        width: 0;
+        height: 0;
+        background-color: transparent;
+        border-style: solid;
+        border-width: 17px 0 17px 10px;
+        border-color: transparent transparent transparent $bgc-orange;      
+      }
+    }
   }
   &__img {
     margin-left: -10px;
@@ -1105,6 +1735,14 @@ input[type=number] {
     margin-bottom: 17px;
     max-width: 112%;
     align-self: center;
+    &-long {
+      margin-top: -26px;
+      margin-left: 59px;
+      margin-right: 0px;
+      margin-bottom: 17px;
+      max-width: 112%;
+      align-self: center;
+    }
   }
   &__name {
     margin-bottom: 24px;
@@ -1112,6 +1750,14 @@ input[type=number] {
     line-height: 1.3;
 
     color: $grey-primary;
+    &-special {
+      
+      margin-bottom: 19px;
+      @include font-24-normal;
+      line-height: 1.3;
+  
+      color: $grey-primary;
+    }
   }
   &__price {
     margin-bottom: 24px;
@@ -1119,6 +1765,21 @@ input[type=number] {
     line-height: 1.3;
 
     color: $grey-secondary;
+    &-old {
+      @include font-16-normal;
+      line-height: 1.3;
+      text-decoration: line-through;
+
+      color: $grey-secondary;
+    }
+    &-new {
+      margin-right: 30px;
+      @include font-16-normal;
+      font-size: 18px;
+      line-height: 1.3;
+
+      color: $orange-primary;
+    }
   }
   &__btn {
     @include btn-reset;
@@ -1142,6 +1803,17 @@ input[type=number] {
       background-color: $purple-dark;
       color: $white;
     }
+  }
+  &__inner {
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+  }
+  &__scheme {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
   }
 }
 
@@ -1543,70 +2215,73 @@ input[type=number] {
 
       color: $grey-secondary;
     }
-    &__btn {
-      display: flex;
-      align-items: center;
-      justify-content: start;
-      @include font-16-normal;
-      font-size: 15px;
-      font-weight: 700;
-      line-height: 1.2;      
+  }
+}
 
-      color: $purple-primary;
-      transition: border-color 0.3s ease, color 0.3s ease;
-      &__text {
-        margin-right: 5px;
-        border-bottom: 2px solid transparent;
-      }
-      &:focus-visible {
-        outline: 0;
-        color: $purple-primary;        
-      }
-      &:focus-visible &__text{
-        border-bottom: 2px solid $bgc-pirple;        
-      }
-      
-      &:focus-visible svg path{
-        stroke: $white;
-      }
-      &:focus-visible svg circle{
-        fill: $bgc-pirple;
-        stroke: $border-pirple;
-      }
-      &:hover {
-        color: $purple-primary;        
-      }
-      &:hover &__text{
-        border-bottom: 2px solid $bgc-pirple;        
-      }
-      
-      &:hover svg path{
-        stroke: $white;
-      }
-      &:hover svg circle{
-        fill: $border-pirple;
-        stroke: $border-pirple;
-      }
-      &:active {
-        color: $purple-dark;        
-      }
-      &:active &__text{
-        border-bottom: 2px solid $border-pirple-dark;        
-      }
-      
-      &:active svg path{
-        stroke: $white;
-      }
-      &:active svg circle{
-        fill: $border-pirple-dark;
-        stroke: $border-pirple-dark;
-      }
-    }
-    & svg svg path, 
-    & svg circle{
-      transition: stroke 0.3s ease, fill 0.3s ease;
+.btn-tocatalog {
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    @include font-16-normal;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.2;      
 
+    color: $purple-primary;
+    transition: border-color 0.3s ease, color 0.3s ease;    
+    &:focus-visible {
+      outline: 0;
+      color: $purple-primary;       
     }
+    &:focus-visible .btn-tocatalog__text {
+      border-bottom: 2px solid $border-pirple;        
+    }
+    
+    &:focus-visible svg path{
+      stroke: $white;
+    }
+    &:focus-visible svg circle{
+      fill: $bgc-pirple;
+      stroke: $border-pirple;
+    }
+    &:hover {
+      color: $purple-primary;        
+    }
+    &:hover .btn-tocatalog__text {
+      border-bottom: 2px solid  $border-pirple;        
+    }
+    
+    &:hover svg path{
+      stroke: $white;
+    }
+    &:hover svg circle{
+      fill: $border-pirple;
+      stroke: $border-pirple;
+    }
+    &:active {
+      color: $purple-dark;        
+    }
+    &:active .btn-tocatalog__text {
+      border-bottom: 2px solid $border-pirple-dark;        
+    }
+    
+    &:active svg path{
+      stroke: $white;
+    }
+    &:active svg circle{
+      fill: $border-pirple-dark;
+      stroke: $border-pirple-dark;
+    }
+  }
+  &__text {
+    margin-right: 5px;
+    border-bottom: 2px solid transparent;
+    transition: border-color .3s ease;
+  }
+  & svg svg path, 
+  & svg circle{
+    transition: stroke 0.3s ease, fill 0.3s ease;
 
   }
 }

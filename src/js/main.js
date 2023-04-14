@@ -92,10 +92,6 @@ const swiperCard = new Swiper('.other__bottom', {
       rows: 3,
     },
     spaceBetween: 32,
-    // pagination: {
-    //   el: ".catalog__btn",
-    //   clickable: true,
-    // },
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
@@ -105,6 +101,50 @@ const swiperCard = new Swiper('.other__bottom', {
     },
   });
 
+
+  // Активация swipper на главной странице hero-slider
+  const swiperHero = new Swiper(".index__hero", {
+    pagination: {
+      el: ".index__hero__pagination",
+      clickable: true,
+    },
+  });
+
+  // Активация swipper на главной странице раздел Special
+  const swiperSpecial = new Swiper('.index__special__slider', {
+    slidesPerView: 'auto',
+    allowSlideNext: true,
+    allowSlidePrev: true,  
+    loop: false,
+    spaceBetween: 32,
+    watchOverflow: false,
+    setWrapperSize: true,
+    
+    navigation: {
+      disabledClass: 'index__special__disabled',
+      nextEl: '.index__special__next',
+      prevEl: '.index__special__pred',
+    },
+  });
+
+
+  // Активация swipper на главной странице раздел Usefull
+
+  const swiperUsefull = new Swiper('.index__usefull__slider', {
+    slidesPerView: '2',
+    allowSlideNext: true,
+    allowSlidePrev: true,  
+    loop: false,
+    spaceBetween: 32,
+    watchOverflow: false,
+    setWrapperSize: true,
+    
+    navigation: {
+      disabledClass: 'index__usefull__disabled',
+      nextEl: '.index__usefull__next',
+      prevEl: '.index__usefull__pred',
+    },
+  });
 
 // Работа кнопки бургер меню
 

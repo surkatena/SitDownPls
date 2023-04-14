@@ -33,7 +33,7 @@ let selectRegion = function() {
 selectRegion();
 
 
-let selectCategory = function() {
+let selectHeaderCategory = function() {
   let selectHeader = document.querySelectorAll('.search__select__header');
   let selectItem = document.querySelectorAll('.search__dropdown__item')
 
@@ -59,4 +59,4 @@ let selectCategory = function() {
   }
 }
 
-selectCategory();
+selectHeaderCategory();
