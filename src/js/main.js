@@ -125,6 +125,11 @@ const swiperCard = new Swiper('.other__bottom', {
       nextEl: '.index__special__next',
       prevEl: '.index__special__pred',
     },
+    // breakpoints: {
+    //   320: {
+    //     slidesPerView: 1,
+    //   }
+    // }
   });
 
 
@@ -144,6 +149,24 @@ const swiperCard = new Swiper('.other__bottom', {
       nextEl: '.index__usefull__next',
       prevEl: '.index__usefull__pred',
     },
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+        // spaceBetween: 20,
+      },
+      722: {
+        slidesPerView: 2,
+        spaceBetween: 32,
+      },  
+      927: {
+        slidesPerView: 3,
+        spaceBetween: 32,
+      },  
+      1406: {
+        slidesPerView: 2,
+        spaceBetween: 32,
+      }
+    }
   });
 
 // Работа кнопки бургер меню
