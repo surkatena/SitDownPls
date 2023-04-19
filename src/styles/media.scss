@@ -387,6 +387,122 @@
       margin-bottom: 30px;
     }
   }
+  .catalog {
+    &__title {
+      display: none;
+      &-media {
+        margin-bottom: 12px;        
+        display: block;
+      }
+    }
+    &__grid {
+      grid-template-columns: 100%;
+    }
+    &__banner {
+      display: none;
+    }
+  }
+  .filter {
+    &__h2 {
+      display: none;
+      &-media {
+        margin-right: 42px;
+        display: block;
+        font-size: 14px;
+      }
+    }
+    &__form {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0;
+    }
+    &__fieldset:not(:last-child) {
+      margin-bottom: 0;
+    }
+    &__h3 {
+      display: none;
+    }
+    &__price__wrapper {
+      flex-direction: column;
+      align-items: start;
+    }
+    &__price__label {
+      margin-bottom: 10px;
+    }
+    #progressbar {
+      display: none;
+    }
+    &__select {
+      position: relative;
+    }
+    &__select__header {
+      width: 187px;
+      cursor: pointer;
+      display: block;
+      position: relative;
+      padding: 9px 15px;
+      background: $bgc-primary;      
+      z-index: 3;
+      border: 2px solid $border-grey-light;
+      border-radius: 10px;
+      transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+      &:after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        top: calc(50% - 4px);
+        right: 16px;
+        background-image: url(../images/sprite.svg#select__arrow-primary);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;  
+        transition: transform 0.3s ease;
+      }      
+    }
+    &__select__header:not(:last-child) {
+      margin-right: 32px;
+    }
+    &__dropdown{      
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 46px;
+      left: 5px;
+      border: 2px solid $border-grey-light;
+      background-color: $white;
+      z-index: 100;
+      transform-origin: top;
+      transform: scaleY(0);
+      transition: transform 0.3s ease;
+      &__item {
+        outline: 0;
+        margin-bottom: 11px;
+        @include font-14-normal;
+        line-height: 18px;
+
+        color: $grey-primary;
+        transition: color 0.3s ease, background-color 0.3s ease;
+        &:focus-visible:not(&:hover){
+          
+          background-color: $bgc-pirple-dark;
+        }
+        &:hover {
+          color: $purple-light;
+        }
+        &:active {
+          color: $purple-dark;
+        }
+      }
+    }
+    .select-open .select__header::after{
+      transform: rotate(180deg);
+    }
+    .select-open .dropdown {
+      transform: scaleY(1);
+    }
+  }
 }
 
 @media (max-width: 927px){
@@ -740,6 +856,28 @@
       bottom: 14.5%;
       left: 93%;
       background-image: url(../images/sprite.svg#feedback__img-768);
+    }
+  }
+  .catalog {
+    &__grid {
+      gap: 23px;
+    }
+    &__title-media {
+      margin-top: -5px;
+      margin-bottom: 27px;
+    }
+  }
+  .filter {
+    &__form {
+      flex-wrap: wrap;
+    }
+    &__h2-media {
+      width: 100%;
+      margin-bottom: 16px;
+    }
+    &__fieldset:not(:nth-last-child(1)),
+    &__fieldset:not(:nth-last-child(2)) {
+      margin-bottom: 12px;
     }
   }
 }
@@ -1368,5 +1506,55 @@
         margin-right: 4px;
       }
     }
+  }
+  .catalog {
+    &__title-media {
+      margin-top: 19px;
+      margin-bottom: 18px;
+    }
+    &__slider {
+      height: 866px;
+    }
+    &__item {      
+      padding: 16px 17px;
+      max-width: 140px;
+      height: 278px !important;
+    }
+    &__wrapper{
+      min-width: 140px;
+    }
+    &__item__wrapper {
+      min-width: 140px;
+    }
+    &__img {
+      margin-bottom: 21px;
+      max-width: 73%;
+    }
+    &__name {
+      margin-bottom: 18px;
+      padding: 0 16px;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 130%;
+    }
+    &__price {
+      padding: 0 16px;
+    }
+    &__buy {
+      padding: 9px 26px;
+      margin: 0 auto;
+    }
+  }
+  .filter {
+    &__select {
+      width: 140px;
+    }
+    &__select__header {
+      width: 140px;
+    }
+    &__fieldset:nth-child(2n+1) {
+      margin-right: 16px;
+    }
+
   }
 }

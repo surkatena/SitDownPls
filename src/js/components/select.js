@@ -60,3 +60,18 @@ let selectHeaderCategory = function() {
 }
 
 selectHeaderCategory();
+
+const filterSelects = document.querySelectorAll ('.filter__select');
+console.log(filterSelects);
+
+if (filterSelects.length !== 0) {
+  filterSelects.forEach ((el) => {
+    el.addEventListener('click', selectToggle)
+    
+  })
+
+  function selectToggle() {
+    this.classList.toggle('select-open'); 
+    console.log(this.parentElement.classList);   
+  }
+}

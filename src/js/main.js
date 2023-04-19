@@ -99,6 +99,23 @@ const swiperCard = new Swiper('.other__bottom', {
         return '<span class="' + className + '">' + (index + 1) + "</span>";
       },
     },
+    breakpoints: {
+      320: {
+        slidesPerView: 2,
+        slidesPerGroup: 2,
+        spaceBetween: 16,
+      },
+      768: {
+        slidesPerView: 2,
+        slidesPerGroup: 2,
+        spaceBetween: 32,
+      },
+      1024: {
+        slidesPerView: 3,
+        slidesPerGroup: 3,
+        spaceBetween: 32,
+      }
+    }
   });
 
 

@@ -29,114 +29,187 @@
       </div> 
       <div class="catalog__grid">
         <section class="catalog__filter filter">
+          <h1 class="catalog__title-media">Каталог</h1>
           <form class="filter__form" action="#" method="get">
             <h2 class="filter__h2">Фильтровать&nbsp;по:</h2>
-
+            <h2 class="filter__h2-media">Фильтры:</h2>
             <fieldset class="filter__category filter__fieldset">
-              <h3 class="filter__h3">Категория</h3>
-              <div class="filter__input__wrapper">                
-                <input class="filter__checkbox visually-hidden" id="category__sofa" type="checkbox" checked>
-                <label class="filter__item" for="category__sofa">Диваны</label>
-              </div>
-              <div class="filter__input__wrapper">                
-                <input class="filter__checkbox visually-hidden" id="category__armchair" type="checkbox">
-                <label class="filter__item" for="category__armchair">Кресла</label>
-              </div>
-              <div class="filter__input__wrapper">                
-                <input class="filter__checkbox visually-hidden" id="category__poof" type="checkbox">
-                <label class="filter__item" for="category__poof">Пуфы</label>
-              </div>
-              <div class="filter__input__wrapper">                
-                <input class="filter__checkbox visually-hidden" id="category__bed" type="checkbox">
-                <label class="filter__item" for="category__bed">Кровати</label>
-              </div>
-              <div class="filter__input__wrapper">                
-                <input class="filter__checkbox visually-hidden" id="category__pedestal" type="checkbox">
-                <label class="filter__item" for="category__pedestal">Тумбы</label>
-              </div>
-              <div class="filter__input__wrapper">                
-                <input class="filter__checkbox visually-hidden" id="category__chest" type="checkbox">
-                <label class="filter__item" for="category__chest">Комоды</label>
-              </div>
-              <div class="filter__input__wrapper">                
-                <input class="filter__checkbox visually-hidden" id="category__chair" type="checkbox">
-                <label class="filter__item" for="category__chair">Стулья</label>
-              </div>
-              <div class="filter__input__wrapper">                
-                <input class="filter__checkbox visually-hidden" id="category__table" type="checkbox">
-                <label class="filter__item" for="category__table">Столы</label>
-              </div>
-              <div class="filter__input__wrapper">                
-                <input class="filter__checkbox visually-hidden" id="category__accessories" type="checkbox">
-                <label class="filter__item" for="category__accessories">Аксессуары</label>
+              <h3 class="filter__h3">Категория</h3>              
+              <div class="filter__select select" tabindex="0">
+                <div class="filter__select__header select__header">
+                  <span class="filter__select__current select__current">Категория</span>
+                </div>
+                <div class="filter__dropdown dropdown">
+                
+                  <div class="filter__input__wrapper">                
+                    <input class="filter__checkbox visually-hidden" id="category__sofa" type="checkbox" checked>
+                    <label class="filter__item" for="category__sofa">
+                      <span> Диваны </span>
+                    </label>
+                  </div>
+                  <div class="filter__input__wrapper">                
+                    <input class="filter__checkbox visually-hidden" id="category__armchair" type="checkbox">
+                    <label class="filter__item" for="category__armchair">
+                      <span> Кресла </span>
+                    </label>
+                  </div>
+                  <div class="filter__input__wrapper">                
+                    <input class="filter__checkbox visually-hidden" id="category__poof" type="checkbox">
+                    <label class="filter__item" for="category__poof">
+                      <span> Пуфы </span>
+                    </label>
+                  </div>
+                  <div class="filter__input__wrapper">                
+                    <input class="filter__checkbox visually-hidden" id="category__bed" type="checkbox">
+                    <label class="filter__item" for="category__bed">
+                      <span> Кровати </span>
+                    </label>
+                  </div>
+                  <div class="filter__input__wrapper">                
+                    <input class="filter__checkbox visually-hidden" id="category__pedestal" type="checkbox">
+                    <label class="filter__item" for="category__pedestal">
+                      <span> Тумбы </span>
+                    </label>
+                  </div>
+                  <div class="filter__input__wrapper">                
+                    <input class="filter__checkbox visually-hidden" id="category__chest" type="checkbox">
+                    <label class="filter__item" for="category__chest">
+                      <span> Комоды </span>
+                    </label>
+                  </div>
+                  <div class="filter__input__wrapper">                
+                    <input class="filter__checkbox visually-hidden" id="category__chair" type="checkbox">
+                    <label class="filter__item" for="category__chair">
+                      <span> Стулья </span>
+                    </label>
+                  </div>
+                  <div class="filter__input__wrapper">                
+                    <input class="filter__checkbox visually-hidden" id="category__table" type="checkbox">
+                    <label class="filter__item" for="category__table">
+                      <span> Столы </span>
+                    </label>
+                  </div>
+                  <div class="filter__input__wrapper">                
+                    <input class="filter__checkbox visually-hidden" id="category__accessories" type="checkbox">
+                    <label class="filter__item" for="category__accessories">
+                      <span> Аксессуары </span>
+                    </label>
+                  </div>
+                </div>
               </div>
             </fieldset>
+
             <fieldset class="filter__price filter__fieldset">
               <h3 class="filter__h3">Цена</h3>
-              <div class="filter__price__wrapper">
-                <label class="filter__price__label">
-                  <span class="filter__price__span">от</span>
-                  <input class="filter__price__input" type="number" min="500" max="999999" class="filter__price__limit" id="input-min">
-                </label>
-                <label class="filter__price__label">
-                  <span class="filter__price__span">до</span>
-                  <input class="filter__price__input" type="number" min="500" max="999999" class="filter__price__limit" id="input-max">
-                </label>
+              <div class="filter__select select" tabindex="0">
+                <div class="filter__select__header select__header">
+                  <span class="filter__select__current select__current">Цена</span>
+                </div>
+                <div class="filter__dropdown dropdown">             
+                  <div class="filter__price__wrapper">
+                    <label class="filter__price__label">
+                      <span class="filter__price__span">от</span>
+                      <input class="filter__price__input" type="number" min="500" max="999999" class="filter__price__limit" id="input-min">
+                    </label>
+                    <label class="filter__price__label">
+                      <span class="filter__price__span">до</span>
+                      <input class="filter__price__input" type="number" min="500" max="999999" class="filter__price__limit" id="input-max">
+                    </label>
+                  </div>
+                </div>
               </div>
               <div id="progressbar"></div>
             </fieldset>
             <fieldset class="filter__sale filter__fieldset">
               <h3 class="filter__h3">Скидка</h3>
-              <div class="filter__input__wrapper">                
-                <input class="filter__checkbox visually-hidden" id="sale__more5000" type="checkbox">
-                <label class="filter__item" for="sale__more5000">Более 5&nbsp;000</label>
-              </div>
-              <div class="filter__input__wrapper">                
-                <input class="filter__checkbox visually-hidden" id="sale__less5000" type="checkbox">
-                <label class="filter__item" for="sale__less5000">Более 5&nbsp;000</label>
-              </div>
-              <div class="filter__input__wrapper">                
-                <input class="filter__checkbox visually-hidden" id="sale__not_important" type="checkbox" checked>
-                <label class="filter__item" for="sale__not_important">Не&nbsp;важно</label>
+              <div class="filter__select select" tabindex="0">
+                <div class="filter__select__header select__header">
+                  <span class="filter__select__current select__current">Скидка</span>
+                </div>
+                <div class="filter__dropdown dropdown">     
+                  <div class="filter__input__wrapper">                
+                    <input class="filter__checkbox visually-hidden" id="sale__more5000" type="checkbox">
+                    <label class="filter__item" for="sale__more5000">
+                      <span>Менее 5&nbsp;000</span> 
+                    </label>
+                  </div>
+                  <div class="filter__input__wrapper">                
+                    <input class="filter__checkbox visually-hidden" id="sale__less5000" type="checkbox">
+                    <label class="filter__item" for="sale__less5000">
+                      <span>Более 5&nbsp;000</span> 
+                    </label>
+                  </div>
+                  <div class="filter__input__wrapper">                
+                    <input class="filter__checkbox visually-hidden" id="sale__not_important" type="checkbox" checked>
+                    <label class="filter__item" for="sale__not_important">
+                      <span>Не&nbsp;важно</span> 
+                    </label>
+                  </div>
+                </div>
               </div>
             </fieldset>
             <fieldset class="filter__color filter__fieldset">
               <h3 class="filter__h3">Цвет</h3>
-              <div class="filter__input__wrapper">                
-                <input class="filter__checkbox visually-hidden" id="color-brown" type="checkbox">
-                <label class="filter__item" for="color-brown">Коричневый</label>
-              </div>
-              <div class="filter__input__wrapper">                
-                <input class="filter__checkbox visually-hidden" id="color-black" type="checkbox">
-                <label class="filter__item" for="color-black">Черный</label>
-              </div>
-              <div class="filter__input__wrapper">                
-                <input class="filter__checkbox visually-hidden" id="color-beige" type="checkbox">
-                <label class="filter__item" for="color-beige">Бежевый</label>
-              </div>
-              <div class="filter__input__wrapper">                
-                <input class="filter__checkbox visually-hidden" id="color-grey" type="checkbox">
-                <label class="filter__item" for="color-grey">Серый</label>
-              </div>
-              <div class="filter__input__wrapper">                
-                <input class="filter__checkbox visually-hidden" id="color-white" type="checkbox">
-                <label class="filter__item" for="color-white">Белый</label>
-              </div>
-              <div class="filter__input__wrapper">                
-                <input class="filter__checkbox visually-hidden" id="color-blue" type="checkbox">
-                <label class="filter__item" for="color-blue">Синий</label>
-              </div>
-              <div class="filter__input__wrapper">                
-                <input class="filter__checkbox visually-hidden" id="color-orange" type="checkbox">
-                <label class="filter__item" for="color-orange">Оранжевый</label>
-              </div>
-              <div class="filter__input__wrapper">                
-                <input class="filter__checkbox visually-hidden" id="color-yellow" type="checkbox">
-                <label class="filter__item" for="color-yellow">Желтый</label>
-              </div>
-              <div class="filter__input__wrapper">                
-                <input class="filter__checkbox visually-hidden" id="color-green" type="checkbox">
-                <label class="filter__item" for="color-green">Зеленый</label>
+              <div class="filter__select select" tabindex="0">
+                <div class="filter__select__header select__header">
+                  <span class="filter__select__current select__current">Цвет</span>
+                </div>
+                <div class="filter__dropdown dropdown"> 
+                  <div class="filter__input__wrapper">                
+                    <input class="filter__checkbox visually-hidden" id="color-brown" type="checkbox">
+                    <label class="filter__item" for="color-brown">
+                      <span>Коричневый</span>
+                    </label>
+                  </div>
+                  <div class="filter__input__wrapper">                
+                    <input class="filter__checkbox visually-hidden" id="color-black" type="checkbox">
+                    <label class="filter__item" for="color-black">
+                      <span>Черный</span>
+                    </label>
+                  </div>
+                  <div class="filter__input__wrapper">                
+                    <input class="filter__checkbox visually-hidden" id="color-beige" type="checkbox">
+                    <label class="filter__item" for="color-beige">
+                      <span>Бежевый</span>
+                    </label>
+                  </div>
+                  <div class="filter__input__wrapper">                
+                    <input class="filter__checkbox visually-hidden" id="color-grey" type="checkbox">
+                    <label class="filter__item" for="color-grey">
+                      <span>Серый</span>
+                    </label>
+                  </div>
+                  <div class="filter__input__wrapper">                
+                    <input class="filter__checkbox visually-hidden" id="color-white" type="checkbox">
+                    <label class="filter__item" for="color-white">
+                      <span>Белый</span>
+                    </label>
+                  </div>
+                  <div class="filter__input__wrapper">                
+                    <input class="filter__checkbox visually-hidden" id="color-blue" type="checkbox">
+                    <label class="filter__item" for="color-blue">
+                      <span>Синий</span>
+                    </label>
+                  </div>
+                  <div class="filter__input__wrapper">                
+                    <input class="filter__checkbox visually-hidden" id="color-orange" type="checkbox">
+                    <label class="filter__item" for="color-orange">
+                      <span>Оранжевый</span>
+                    </label>
+                  </div>
+                  <div class="filter__input__wrapper">                
+                    <input class="filter__checkbox visually-hidden" id="color-yellow" type="checkbox">
+                    <label class="filter__item" for="color-yellow">
+                      <span>Желтый</span>
+                    </label>
+                  </div>
+                  <div class="filter__input__wrapper">                
+                    <input class="filter__checkbox visually-hidden" id="color-green" type="checkbox">
+                    <label class="filter__item" for="color-green">
+                      <span>Зеленый</span>
+                    </label>
+                  </div>
+                </div>
               </div>
 
             </fieldset>
@@ -176,8 +249,8 @@
                   </svg> 
                   5,0
                 </span>
-                <div class="item__wrapper">
-                  <img src="./images/item__R94.png" alt="Фото дивана R94" class="other__img item__img">
+                <div class="item__wrapper catalog__item__wrapper">
+                  <img src="./images/item__R94.png" alt="Фото дивана R94" class="catalog__img item__img">
                   <h2 class="catalog__name item__name">
                     Диван кожанный &ldquo;R-94&rdquo;
                   </h2>
@@ -194,8 +267,8 @@
                   </svg> 
                   4,8
                 </span>
-                <div class="item__wrapper">
-                  <img src="./images/item__Y68.png" alt="Фото дивана Y68" class="other__img item__img">
+                <div class="item__wrapper catalog__item__wrapper">
+                  <img src="./images/item__Y68.png" alt="Фото дивана Y68" class="catalog__img item__img">
                   <h2 class="catalog__name item__name">
                     Диван велюровый &ldquo;Y-68&rdquo;
                   </h2>
@@ -212,8 +285,8 @@
                   </svg> 
                   4,8
                 </span>
-                <div class="item__wrapper">
-                  <img src="./images/item__V43.png" alt="Фото дивана V43" class="other__img item__img">
+                <div class="item__wrapper catalog__item__wrapper">
+                  <img src="./images/item__V43.png" alt="Фото дивана V43" class="catalog__img item__img">
                   <h2 class="catalog__name item__name">
                     Диван шиниловый &ldquo;V-43&rdquo;
                   </h2>
@@ -231,8 +304,8 @@
                   </svg> 
                   4,9
                 </span>
-                <div class="item__wrapper">
-                  <img src="./images/item__T75.png" alt="Фото дивана T75" class="other__img item__img">
+                <div class="item__wrapper catalog__item__wrapper">
+                  <img src="./images/item__T75.png" alt="Фото дивана T75" class="catalog__img item__img">
                   <h2 class="catalog__name item__name">
                     Диван апартековый &ldquo;T-75&rdquo;
                   </h2>
@@ -249,8 +322,8 @@
                   </svg> 
                   4,8
                 </span>
-                <div class="item__wrapper">
-                  <img src="./images/item__W95.png" alt="Фото дивана W95" class="other__img item__img">
+                <div class="item__wrapper catalog__item__wrapper">
+                  <img src="./images/item__W95.png" alt="Фото дивана W95" class="catalog__img item__img">
                   <h2 class="catalog__name item__name">
                     Диван из шинила &ldquo;W-95&rdquo;
                   </h2>
@@ -267,8 +340,8 @@
                   </svg> 
                   4,7
                 </span>
-                <div class="item__wrapper">
-                  <img src="./images/item__S99.png" alt="Фото дивана S99" class="other__img item__img">
+                <div class="item__wrapper catalog__item__wrapper">
+                  <img src="./images/item__S99.png" alt="Фото дивана S99" class="catalog__img item__img">
                   <h2 class="catalog__name item__name">
                     Диван велюровый &ldquo;S-99&rdquo;
                   </h2>
@@ -286,8 +359,8 @@
                   </svg> 
                   4,8
                 </span>
-                <div class="item__wrapper">
-                  <img src="./images/item__D31.png" alt="Фото дивана D31" class="other__img item__img">
+                <div class="item__wrapper catalog__item__wrapper">
+                  <img src="./images/item__D31.png" alt="Фото дивана D31" class="catalog__img item__img">
                   <h2 class="catalog__name item__name">
                     Диван тканевый &ldquo;D-31&rdquo;
                   </h2>
@@ -302,8 +375,8 @@
                   </svg> 
                   4,8
                 </span>
-                <div class="item__wrapper">
-                  <img src="./images/item__G41.png" alt="Фото дивана G41" class="other__img item__img">
+                <div class="item__wrapper catalog__item__wrapper">
+                  <img src="./images/item__G41.png" alt="Фото дивана G41" class="catalog__img item__img">
                   <h2 class="catalog__name item__name">
                     Диван флоковый &ldquo;G-41&rdquo;
                   </h2>
@@ -320,8 +393,8 @@
                   </svg> 
                   4,7
                 </span>
-                <div class="item__wrapper">
-                  <img src="./images/item__F85.png" alt="Фото дивана F85" class="other__img item__img">
+                <div class="item__wrapper catalog__item__wrapper">
+                  <img src="./images/item__F85.png" alt="Фото дивана F85" class="catalog__img item__img">
                   <h2 class="catalog__name item__name">
                     Диван из кожзама &ldquo;F-85&rdquo;
                   </h2>
@@ -339,8 +412,8 @@
                   </svg> 
                   4,6
                 </span>
-                <div class="item__wrapper">
-                  <img src="./images/item__H64.png" alt="Фото дивана H64" class="other__img item__img">
+                <div class="item__wrapper catalog__item__wrapper">
+                  <img src="./images/item__H64.png" alt="Фото дивана H64" class="catalog__img item__img">
                   <h2 class="catalog__name item__name">
                     Диван флоковый &ldquo;H-64&rdquo;
                   </h2>
@@ -357,8 +430,8 @@
                   </svg> 
                   4,6
                 </span>
-                <div class="item__wrapper">
-                  <img src="./images/item__C42.png" alt="Фото дивана C42" class="other__img item__img">
+                <div class="item__wrapper catalog__item__wrapper">
+                  <img src="./images/item__C42.png" alt="Фото дивана C42" class="catalog__img item__img">
                   <h2 class="catalog__name item__name">
                     Диван из шинила &ldquo;C-42&rdquo;
                   </h2>
@@ -375,8 +448,8 @@
                   </svg> 
                   4,5
                 </span>
-                <div class="item__wrapper">
-                  <img src="./images/item__R85.png" alt="Фото дивана R85" class="other__img item__img">
+                <div class="item__wrapper catalog__item__wrapper">
+                  <img src="./images/item__R85.png" alt="Фото дивана R85" class="catalog__img item__img">
                   <h2 class="catalog__name item__name">
                     Диван велюровый &ldquo;R-85&rdquo;
                   </h2>
@@ -394,8 +467,8 @@
                   </svg> 
                   4,6
                 </span>
-                <div class="item__wrapper">
-                  <img src="./images/item__H58.png" alt="Фото дивана H58" class="other__img item__img">
+                <div class="item__wrapper catalog__item__wrapper">
+                  <img src="./images/item__H58.png" alt="Фото дивана H58" class="catalog__img item__img">
                   <h2 class="catalog__name item__name">
                     Диван флоковый &ldquo;H-58&rdquo;
                   </h2>
@@ -412,8 +485,8 @@
                   </svg> 
                   4,6
                 </span>
-                <div class="item__wrapper">
-                  <img src="./images/item__U58.png" alt="Фото дивана U58" class="other__img item__img">
+                <div class="item__wrapper catalog__item__wrapper">
+                  <img src="./images/item__U58.png" alt="Фото дивана U58" class="catalog__img item__img">
                   <h2 class="catalog__name item__name">
                     Диван велюровый &ldquo;U-58&rdquo;
                   </h2>
@@ -430,8 +503,8 @@
                   </svg> 
                   4,5
                 </span>
-                <div class="item__wrapper">
-                  <img src="./images/item__S44.png" alt="Фото дивана S44" class="other__img item__img">
+                <div class="item__wrapper catalog__item__wrapper">
+                  <img src="./images/item__S44.png" alt="Фото дивана S44" class="catalog__img item__img">
                   <h2 class="catalog__name item__name">
                     Диван велюровый &ldquo;S-44&rdquo;
                   </h2>
@@ -449,8 +522,8 @@
                   </svg> 
                   4,6
                 </span>
-                <div class="item__wrapper">
-                  <img src="./images/item__R43.png" alt="Фото дивана R43" class="other__img item__img">
+                <div class="item__wrapper catalog__item__wrapper">
+                  <img src="./images/item__R43.png" alt="Фото дивана R43" class="catalog__img item__img">
                   <h2 class="catalog__name item__name">
                     Диван из кожзама &ldquo;R-43&rdquo;
                   </h2>
@@ -465,8 +538,8 @@
                   </svg> 
                   4,5
                 </span>
-                <div class="item__wrapper">
-                  <img src="./images/item__F41.png" alt="Фото дивана F41" class="other__img item__img">
+                <div class="item__wrapper catalog__item__wrapper">
+                  <img src="./images/item__F41.png" alt="Фото дивана F41" class="catalog__img item__img">
                   <h2 class="catalog__name item__name">
                     Диван флоковый &ldquo;F-41&rdquo;
                   </h2>
@@ -483,8 +556,8 @@
                   </svg> 
                   4,4
                 </span>
-                <div class="item__wrapper">
-                  <img src="./images/item__C80.png" alt="Фото дивана C58" class="other__img item__img">
+                <div class="item__wrapper catalog__item__wrapper">
+                  <img src="./images/item__C80.png" alt="Фото дивана C58" class="catalog__img item__img">
                   <h2 class="catalog__name item__name">
                     Диван из шинила &ldquo;C-80&rdquo;
                   </h2>
