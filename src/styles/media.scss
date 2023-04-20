@@ -192,6 +192,7 @@
       display: flex;
       align-items: center;
       position: relative;
+      overflow-x: hidden;
     }
     &__wrapper {
       padding: 20px 68px;
@@ -883,6 +884,7 @@
 }
 
 @media (max-width: 721px) {
+  // .swiper { position: unset !important; }
   .container {
     padding: 0 $padding-320;
   }
@@ -1260,8 +1262,8 @@
       height: 90px;
     }
     &__item {
-      // width: 53%!important;
-    }
+      height: 85px;
+    }   
   }
 
   .index__hero {

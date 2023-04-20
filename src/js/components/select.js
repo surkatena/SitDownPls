@@ -1,5 +1,3 @@
-console.log('select.js');
-
 let selectRegion = function() {
   let selectHeader = document.querySelectorAll('.region__select__header');
   let selectItem = document.querySelectorAll('.region__dropdown__item')
@@ -61,8 +59,7 @@ let selectHeaderCategory = function() {
 
 selectHeaderCategory();
 
-const filterSelects = document.querySelectorAll ('.filter__select');
-console.log(filterSelects);
+const filterSelects = document.querySelectorAll('.filter__select');
 
 if (filterSelects.length !== 0) {
   filterSelects.forEach ((el) => {

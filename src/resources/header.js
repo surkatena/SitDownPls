@@ -1,5 +1,4 @@
 function header() {
-  console.log('header.js');
   const header = document.querySelector('.header');
   header.innerHTML = 
   `

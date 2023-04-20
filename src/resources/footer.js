@@ -1,5 +1,4 @@
 function footer() {
-  console.log('footer.js');
   const footer = document.querySelector('.footer');
   footer.innerHTML = 
   `<div class="footer__top">
