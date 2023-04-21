@@ -964,6 +964,9 @@ input[type=number] {
       grid-template-columns: repeat(4, 1fr);
       gap: $gap;
     }
+    &__item {
+      justify-self: center;
+    }
     &__btn {
       @include btn-reset;
       padding: 21px 26.5px;
