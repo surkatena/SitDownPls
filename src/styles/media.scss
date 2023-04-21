@@ -1386,6 +1386,7 @@
         padding: 16px 17px;
         width: 100% !important;
         max-width: none;
+        min-height: 278px !important;
       }
       &__wrapper{
         min-width: 140px;
@@ -1586,6 +1587,7 @@
         height: 278px !important;
         max-width: none;
         width: 13.5% !important;
+        min-height: 278px;
       }
       &__wrapper{
         min-width: 140px;
@@ -1594,12 +1596,11 @@
         min-width: 140px;
       }
       &__img {
-        margin-bottom: 23px;
         max-width: 72%;
         max-height: 70px;
       }
       &__name {
-        margin-bottom: 18px;
+        margin-bottom: 11px;
         padding: 0 16px;
         font-weight: 400;
         font-size: 16px;
