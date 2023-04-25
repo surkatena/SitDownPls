@@ -236,6 +236,9 @@ input[type=number] {
       }
     }
   }
+  &__company-info {
+    display: none;
+  }
   &__middle {
     width: 100%;
     padding-top: 33px;
@@ -855,10 +858,10 @@ input[type=number] {
       margin-bottom: 50px;      
       width: 50%;
       font-family: 'Open Sans', Verdana, Arial, sans-serif;
-      font-weight: 700;
+      font-weight: 600;
       font-style: normal;
       font-size: 48px;
-      letter-spacing: -3px;
+      letter-spacing: 1px;
       line-height: 1.35;
 
       color: $grey-secondary;
@@ -867,12 +870,12 @@ input[type=number] {
       }
     }
     &__btn {
-      padding: 22px 46px;
+      padding: 22px 51px;
       background-color: $purple-primary;
       border: 1px solid $purple-primary;
       border-radius: 10px;
       @include font-16-normal;
-      font-weight: 700;
+      font-weight: 600;
       line-height: 1;
 
       color: $white;
@@ -969,14 +972,14 @@ input[type=number] {
     }
     &__btn {
       @include btn-reset;
-      padding: 21px 26.5px;
+      padding: 21px 37.5px;
       margin: 0 auto;
       display: block;
       background-color: $purple-primary;
       border:  1px solid  $purple-primary;
       border-radius: 10px;
       @include font-16-normal;
-      font-weight: 700;
+      font-weight: 600;
       line-height: 1;
 
       color: $white;
@@ -1033,14 +1036,14 @@ input[type=number] {
     }
     &__btn {
       @include btn-reset;
-      padding: 21px 26.5px;
+      padding: 21px 34.5px;
       // margin: 0 auto;
       // display: block;
       background-color: $purple-primary;
       border:  1px solid  $purple-primary;
       border-radius: 10px;
       @include font-16-normal;
-      font-weight: 700;
+      font-weight: 600;
       line-height: 1;
 
       color: $white;

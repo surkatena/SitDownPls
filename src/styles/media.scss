@@ -575,6 +575,7 @@
   }
 
   .burger {
+    position: absolute;
     @include btn-reset;
     padding: 3px;
     width: 30px;
@@ -583,6 +584,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    z-index: 10;
 
     &:focus-visible {
       background-color: $bgc-pirple-dark;
@@ -623,24 +625,34 @@
   }
 
   .nav {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 95px;
+    padding-bottom: 60px;
+    padding-left: 68px;
     position: absolute;
-    top: 70px;
-    left: 0;
-    width: 50%;
+    top: 0px;
+    left: -$padding-768;
+    width: calc(100% + $padding-768 * 2);    
     z-index: 5;
     background-color: $white;
-    box-shadow: 10px 0px 19px 8px rgba(0,0,0,0.1);
-    border-radius: 0px 20px 20px 0px;
     transform: translate(-1000px);
     transition: transform 0.5s ease;
     &__list {
-      flex-direction: column;
-      align-items: start;
-    }
-    &__item:not(:last-child) {
-      margin-bottom: 20px;
+      display: grid;
+      width: 45%;
+      grid-template-columns: repeat(2, auto);
+      row-gap: 41px;
+      &:after {
+        content: "";
+        position: absolute;
+        right: 72px;
+        bottom: 60px;
+        width: 161px;
+        height: 112px;
+        background-image: url(../images/sprite.svg#elephant);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+      }
     }
   }
 
@@ -924,7 +936,12 @@
       &__info {
         display: none;
       }
+      &__company-info {
+        display: flex;
+      }
+
       &__middle {
+        justify-content: flex-end;
         position: relative;
         padding-top: 0;
         padding-bottom: 0;
@@ -981,10 +998,53 @@
     }
   
     .nav {
-      top: 62px;
+      padding-top: 62px;
+      padding-bottom: 0px;
+      left: -$padding-320;
+      width: calc(100% + $padding-320 * 2);
+      padding-left: 1px;
+      &__list {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+        row-gap: 0;
+        &::after{
+          content: none;
+        }
+      }
+      &__item {
+        margin-bottom: 41px;
+      }
+      &__item:last-child {
+        margin-bottom: 26px;
+      }
+      .header__company-info {
+        padding: 22px $padding-320 16px;
+        background-color: $bgc-primary;
+        &__list {
+          @include ul-reset;
+          width: 100%;
+          display: flex;
+          flex-wrap: wrap;  
+          justify-content: space-between;
+          align-items: flex-start;        
+        }
+        &__item {
+          margin-bottom: 10px;
+          width: max-content;
+          font-size: 14px;
+          color: $grey-secondary;
+          text-align: left;
+        }
+      }
+    } 
+    
+    .burger {
+      top: 9px;
       left: 0;
-      width: 100%;
-    }  
+    }
   
     .breadcrumb {
       display: none;
@@ -1117,38 +1177,6 @@
         margin: 0 auto;
       }
     }
-  
-    // .item {
-    //   min-height: 278px;
-    //   padding: 28px;
-    //   &__star {
-    //     font-size: 12px;    
-    //   }
-    //   &__star svg {
-    //     margin-right: 3px;
-    //     width: 13px;
-    //     height: 14px;
-    //   }
-    //   &__img {
-    //     max-width: 100%;
-    //     // width: 102%;
-    //     margin: 0 auto;
-    //     margin-bottom: 16px;
-    //     align-self: auto;
-    //   }
-    //   &__name {
-    //     margin-bottom: 19px;
-    //     width: 80%;
-    //     @include font-16-normal;
-    //     line-height: 1.3;
-    //   }
-    //   &__price {
-    //     margin-bottom: 15px;
-    //   }
-    //   &__btn {
-    //     padding: 17px 37px;
-    //   }
-    // }
   
     .partnership{
       &__title {
@@ -1344,10 +1372,11 @@
         background-image: url(../images/hero__img__03-320.jpg);
       }
       &__btn {
+        padding: 22px 107px;
         position: relative;
         bottom: -156px;
-        left: -18px;
-        width: 114%;
+        left: calc(50% - 300px / 2);
+        
       }
       & .swiper-pagination {
         bottom: var(--swiper-pagination-bottom, 117px);
@@ -1520,11 +1549,14 @@
         & img {
           margin-left: -13px;
           height: 87px;
-        }
+        }        
         & .btn-tocatalog__link {
           position: absolute;
           top: 64px;
           left: 97px;
+        }
+        .top-category__title {
+          width: 40%;
         }
       }
       &-chair {
@@ -1571,6 +1603,11 @@
           margin-right: 4px;
         }
       }
+      &__tooltip__text {
+        width: 150px;
+        left: calc(50% - 150px / 2);
+        font-size: 10px;
+      } 
     }
 
     .catalog {
